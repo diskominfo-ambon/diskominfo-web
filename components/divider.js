@@ -2,7 +2,7 @@ import styled from 'styled-components';
 import Container from './container';
 
 const WrapperDivider = styled.div`
-  background-color: var(--primary);
+  background-color: #0664A6;
   padding: 1rem 0;
 `;
 

@@ -3,6 +3,8 @@ import styled from 'styled-components'
 
 import BlockqouteNotice from '@/components/blockqoute-notice';
 import Divider from '@/components/divider';
+import Post from '@/components/post';
+import Container from '@/components/container';
 
 const title = 'Pemerintah Kota Ambon &#8211; Laman resmi Dinas komunikasi, informatika dan persandian kota Ambon';
 
@@ -49,6 +51,10 @@ export default function Home() {
           title="Informasi  berita lainnya"
           subtitle="Kumpulan informasi dan berita terkini"
         />
+
+        <Container>
+          <Post />
+        </Container>
 
       </Section>
     </div>
