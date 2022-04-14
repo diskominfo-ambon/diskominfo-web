@@ -41,6 +41,12 @@ const NavbarMenu = styled.ul`
   list-style: none;
   display: flex;
   justify-content: space-evenly;
+  background-color: white;
+
+  @media screen and (max-width: ${({theme}) => theme.size.medium}) {
+    display: block;
+    padding: 0;
+  }
 
 `;
 const NavbarItem = styled.li`
@@ -51,8 +57,21 @@ const NavbarItem = styled.li`
   font-family: 'Raleway', sans-serif;
   text-transform: uppercase;
   position: relative;
+  margin: 0;
 
-  > svg {
+  @media screen and (max-width: ${({theme}) => theme.size.medium}) {
+    width: 100%;
+    text-align: center;
+    border-bottom: 1px solid #ddd;
+    padding: 1rem 0;
+
+    label {
+      width: 100%;
+      display: block;
+    }
+  }
+
+  svg, label > svg {
     margin-left: .6rem;
   }
 `;
@@ -116,6 +135,12 @@ const Button = styled.button`
 const Dropdown = styled.ul`
   margin: 0;
   padding: 0;
+  opacity: 0;
+  background: red;
+  visibility: hidden;
+  height: 0px;
+  transform: translateY(-40px);
+  transition: 400ms ease;
   list-style: none;
   position: absolute;
   top: 29px;
@@ -124,9 +149,24 @@ const Dropdown = styled.ul`
   background-color: white;
   overflow: hidden;
   min-width: 220px;
+
+  @media screen and (max-width: ${({theme}) => theme.size.medium}) {
+    position: static;
+    box-shadow: none;
+    margin-top: .6rem;
+  }
 `;
 const DropdownItem = styled.li`
   border-top: 1px solid #eee;
+
+
+  @media screen and (max-width: ${({theme}) => theme.size.medium}) {
+    border-top: 1px dashed #ddd;
+
+    &:last-child {
+      border-bottom: 1px dashed #ddd;
+    }
+  }
 
   &:first-child {
     border: none;
@@ -136,6 +176,9 @@ const DropdownItem = styled.li`
     display: block;
     text-decoration: none;
 
+    &:active {
+      color:red;
+    }
     &:hover {
       background-color: #eee;
     }
@@ -146,6 +189,17 @@ const DropdownItem = styled.li`
         color: var(--primary);
       }
     }
+  }
+`;
+
+const InputDropdownTrigger = styled.input`
+  display: none;
+
+  &:checked ~ ul {
+    opacity: 1;
+    visibility: visible;
+    height: auto;
+    transform: translateY(0px);
   }
 `;
 
@@ -163,7 +217,6 @@ function FrontNavbar() {
             Bersatu, bersama manggurebe maju
           </Title>
         </FlexRow>
-
 
         <form>
           <FormGroup>
@@ -189,9 +242,11 @@ export default function Navbar() {
       <Container>
         <NavbarMenu>
           <NavbarItem>
-            Mengenal kami
-            <FontAwesomeIcon icon={faCaretDown}/>
-
+            <label htmlFor="dropdown-introduction">
+              Mengenal kami
+              <FontAwesomeIcon icon={faCaretDown}/>
+            </label>
+            <InputDropdownTrigger type="checkbox" id="dropdown-introduction"/>
             <Dropdown>
               <DropdownItem>
                 <a href="#">
@@ -217,9 +272,11 @@ export default function Navbar() {
             Program dan kegiatan
           </NavbarItem>
           <NavbarItem>
-            Informasi dan Berita
-            <FontAwesomeIcon icon={faCaretDown}/>
-
+            <label htmlFor="dropdown-news">
+              Informasi dan Berita
+              <FontAwesomeIcon icon={faCaretDown}/>
+            </label>
+            <InputDropdownTrigger type="checkbox" id="dropdown-news"/>
             <Dropdown>
               <DropdownItem>
                 <a href="#">

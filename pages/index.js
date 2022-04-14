@@ -15,6 +15,31 @@ const Section = styled.div``;
 const SectionTitle = styled.h2``;
 const SectionSubtitle = styled.p``;
 
+const Box = styled.div`
+  border: 1px solid #ddd;
+  padding: .8rem 1rem;
+  border-radius: 3px;
+  margin-bottom: .9rem;
+  font-size: .9rem;
+
+  &:last-child {
+    margin-bottom: 0;
+  }
+`;
+const Column = styled.div`
+`;
+const ContainerFlexRow = styled(Container)`
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  width: 1000px;
+`;
+const Heading = styled.div`
+  display: flex:
+  font-size: 1.3rem;
+  text-align: center;
+`;
+
 export default function Home() {
   return (
     <div>
@@ -35,7 +60,30 @@ export default function Home() {
       </Section>
 
       <Section>
-
+        <Heading>
+          Visi dan Misi
+        </Heading>
+        <ContainerFlexRow>
+          <Column>
+            <Box>
+              Ambon yang harmonis, sejahtera dan religius
+            </Box>
+          </Column>
+          <Column>
+            <Box>
+              Memperkuat dan mempererat harmonis sosial
+            </Box>
+            <Box>
+              Memperkuat dan mempererat harmonis sosial
+            </Box>
+            <Box>
+              Memperkuat dan mempererat harmonis sosial
+            </Box>
+            <Box>
+              Memperkuat dan mempererat harmonis sosial
+            </Box>
+          </Column>
+        </ContainerFlexRow>
       </Section>
 
       <Section>
