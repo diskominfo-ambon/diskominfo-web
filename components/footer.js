@@ -4,7 +4,7 @@ import Container from './container';
 
 
 const BaseFooter = styled.footer`
-  border-top: 1px solid #f2f2f2;
+  border-top: 1px solid #ddd;
 `;
 
 const ContainerFlexRow = styled(Container)`

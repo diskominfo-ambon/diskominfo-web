@@ -2,6 +2,7 @@ import Head from 'next/head';
 import styled from 'styled-components'
 
 import BlockqouteNotice from '@/components/blockqoute-notice';
+import GovermentGoals from '@/components/government-goals';
 import Divider from '@/components/divider';
 import Post from '@/components/post';
 import Container from '@/components/container';
@@ -26,8 +27,7 @@ const Box = styled.div`
     margin-bottom: 0;
   }
 `;
-const Column = styled.div`
-`;
+
 const ContainerFlexRow = styled(Container)`
   display: flex;
   align-items: center;
@@ -38,6 +38,7 @@ const Heading = styled.div`
   display: flex:
   font-size: 1.3rem;
   text-align: center;
+
 `;
 
 export default function Home() {
@@ -60,40 +61,13 @@ export default function Home() {
       </Section>
 
       <Section>
-        <Heading>
-          Visi dan Misi
-        </Heading>
-        <ContainerFlexRow>
-          <Column>
-            <Box>
-              Ambon yang harmonis, sejahtera dan religius
-            </Box>
-          </Column>
-          <Column>
-            <Box>
-              Memperkuat dan mempererat harmonis sosial
-            </Box>
-            <Box>
-              Memperkuat dan mempererat harmonis sosial
-            </Box>
-            <Box>
-              Memperkuat dan mempererat harmonis sosial
-            </Box>
-            <Box>
-              Memperkuat dan mempererat harmonis sosial
-            </Box>
-          </Column>
-        </ContainerFlexRow>
-      </Section>
-
-      <Section>
         <Divider
-          title="Kebutuhan layanan"
-          subtitle="Semua kebutuhan layanan Anda"
+          title="Tujuan visi dan misi"
+          subtitle="Tujuan visi dan misi diskominfo pemerintah kota"
         />
-
-
+        <GovermentGoals/>
       </Section>
+
       <Section>
         <Divider
           title="Informasi  berita lainnya"
