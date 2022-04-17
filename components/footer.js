@@ -2,8 +2,25 @@ import styled from 'styled-components';
 import Container from './container';
 
 
+const contacts = [
+  {
+    'key': 'email',
+    'source': '#',
+    'title': 'Alamat email'
+  },
+  {
+    'key': 'youtube',
+    'source': '#',
+    'title': 'Youtube'
+  },
+  {
+    'key': 'ig',
+    'source': '#',
+    'title': 'Instagram'
+  },
+];
 
-const BaseFooter = styled.footer`
+const Layout = styled.footer`
   border-top: 1px solid #ddd;
 `;
 
@@ -50,6 +67,8 @@ const ListGroup = styled.ul`
 const ListItem = styled.li`
   margin-bottom: .5rem;
   font-size: .9rem;
+  font-family: 'Noto Sans', sans-serif;
+  font-weight: 300;
 
   > a {
     text-decoration: none;
@@ -69,69 +88,63 @@ const ListItem = styled.li`
 
 
 
-const contacts = [
-  {
-    'key': 'email',
-    'source': '#',
-    'title': 'Alamat email'
-  },
-  {
-    'key': 'youtube',
-    'source': '#',
-    'title': 'Youtube'
-  },
-  {
-    'key': 'ig',
-    'source': '#',
-    'title': 'Instagram'
-  },
-];
+function Contact() {
+  return (
+    <>
+      <Heading>Kontak</Heading>
+      <ListGroup>
+        { contacts.map(contact =>
+          <ListItem key={contact.key}>
+            <a href={contact.source}>
+              {contact.title}
+            </a>
+          </ListItem>
+        )}
+      </ListGroup>
+    </>
+  )
+}
+
+function Supported() {
+  return (
+    <>
+      <Heading>Dukungan</Heading>
+      <ListGroup>
+        <ListItem>
+          <a href="">
+            Laman pemerintah kota Ambon
+            <span>
+              (https://ambon.go.id)
+            </span>
+          </a>
+        </ListItem>
+        <ListItem>
+          <a href="">
+            Pemerintah provinsi Maluku
+            <span>
+              (https://malukuprov.go.id)
+            </span>
+          </a>
+        </ListItem>
+      </ListGroup>
+    </>
+  );
+}
 
 
 export default function Footer() {
   return (
-    <BaseFooter>
+    <Layout>
       <ContainerFlexRow>
-        <div>
+        <>
           <Title>Hubungi kami</Title>
           <Subtitle>
             Dinas Komunikasi, Informatika & Persandian kota Ambon &copy; 2022
           </Subtitle>
-        </div>
-        <div>
-          <Heading>Dukungan</Heading>
-          <ListGroup>
-            <ListItem>
-              <a href="">
-                Laman pemerintah kota Ambon
-                <span>
-                  (https://ambon.go.id)
-                </span>
-              </a>
-            </ListItem>
-            <ListItem>
-              <a href="">
-                Pemerintah provinsi Maluku
-                <span>
-                  (https://malukuprov.go.id)
-                </span>
-              </a>
-            </ListItem>
-          </ListGroup>
-        </div>
-        <div>
-          <Heading>Kontak</Heading>
-          <ListGroup>
-            { contacts.map(contact =>
-              <ListItem key={contact.key}>
-                <a href={contact.source}>
-                  {contact.title}
-                </a>
-              </ListItem>
-            )}
-          </ListGroup>
-        </div>
+        </>
+        <Supported/>
+        <Contact/>
       </ContainerFlexRow>
-    </BaseFooter>
+    </Layout>
   );
 }

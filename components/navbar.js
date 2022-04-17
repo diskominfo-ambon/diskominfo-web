@@ -43,6 +43,7 @@ const NavbarMenu = styled.ul`
   justify-content: space-evenly;
   background-color: white;
 
+
   @media screen and (max-width: ${({theme}) => theme.size.medium}) {
     display: block;
     padding: 0;
@@ -77,12 +78,12 @@ const NavbarItem = styled.li`
 `;
 
 const Title = styled.h2`
-  color: white;
+  color: #FFCD00;
   margin: 0;
   font-size: .9rem;
   font-weight: 500;
   margin-left: .9rem;
-
+  font-weight: 600;
   `;
 const Logo = styled.img`
   width: 130px;
@@ -148,6 +149,7 @@ const Dropdown = styled.ul`
   box-shadow: 0 2px 6px rgba(0, 0, 0, 0.20);
   background-color: white;
   overflow: hidden;
+  z-index: 2;
   min-width: 220px;
 
   @media screen and (max-width: ${({theme}) => theme.size.medium}) {
