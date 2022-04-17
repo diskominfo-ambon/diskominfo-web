@@ -22,18 +22,18 @@ const contacts = [
 
 const Layout = styled.footer`
   border-top: 1px solid #ddd;
+  padding: 2rem 0;
 `;
 
 const ContainerFlexRow = styled(Container)`
   display: flex;
-  align-items: center;
 
-  div:first-child {
-    flex: 2;
-  }
-
-  div {
+  > div {
     flex: 1;
+
+    &:first-child {
+      flex: 2;
+    }
   }
 
   @media screen and (max-width: ${({theme}) => theme.size.medium}) {
@@ -56,6 +56,9 @@ const Title = styled.h2`
 `;
 const Subtitle = styled.p`
   margin: 0;
+  font-family: 'Noto Sans', sans-serif;
+  font-size: .9rem;
+  font-weight: 400;
 
 `;
 const ListGroup = styled.ul`
@@ -90,7 +93,7 @@ const ListItem = styled.li`
 
 function Contact() {
   return (
-    <>
+    <div>
       <Heading>Kontak</Heading>
       <ListGroup>
         { contacts.map(contact =>
@@ -101,13 +104,13 @@ function Contact() {
           </ListItem>
         )}
       </ListGroup>
-    </>
+    </div>
   )
 }
 
 function Supported() {
   return (
-    <>
+    <div>
       <Heading>Dukungan</Heading>
       <ListGroup>
         <ListItem>
@@ -127,7 +130,7 @@ function Supported() {
           </a>
         </ListItem>
       </ListGroup>
-    </>
+    </div>
   );
 }
 
@@ -136,12 +139,12 @@ export default function Footer() {
   return (
     <Layout>
       <ContainerFlexRow>
-        <>
+        <div>
           <Title>Hubungi kami</Title>
           <Subtitle>
             Dinas Komunikasi, Informatika & Persandian kota Ambon &copy; 2022
           </Subtitle>
-        </>
+        </div>
         <Supported/>
         <Contact/>
       </ContainerFlexRow>
