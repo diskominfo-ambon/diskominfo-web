@@ -36,6 +36,7 @@ const Goals = styled.ul`
     position: absolute;
     top: -37px;
     font-family: 'Noto Sans', sans-serif;
+    font-family: 'Plus Jakarta Sans', sans-serif;
     font-weight: 400;
     padding: .2rem .4rem;
     border-radius: 3px;
@@ -50,7 +51,7 @@ const GoalsItem = styled.li`
   padding: 1rem;
   border-bottom: 1px solid #ddd;
   counter-increment: count;
-  font-family: 'Noto Sans', sans-serif;
+  font-family: 'Plus Jakarta Sans', sans-serif;
   font-weight: 400;
   font-size: .92rem;
   color: var(--dark);
@@ -67,6 +68,7 @@ const GoalsItem = styled.li`
     margin-right: .5rem;
     padding: .2rem .4rem;
     border-radius: 4px;
+    font-family: 'Plus Jakarta Sans', sans-serif;
   }
 
   &:hover {

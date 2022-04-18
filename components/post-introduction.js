@@ -1,8 +1,8 @@
-import styled from 'styled-components';
+import styled, { keyframes } from 'styled-components';
 import Image from 'next/image';
 import Link from 'next/link';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faUserCheck, faClock, faHashtag } from "@fortawesome/free-solid-svg-icons";
+import { faUserCheck, faClock, faHashtag, faCircle } from "@fortawesome/free-solid-svg-icons";
 import { Navigation, Pagination, EffectFade, Autoplay } from 'swiper';
 import { Swiper, SwiperSlide } from 'swiper/react';
 
@@ -57,7 +57,7 @@ const Caption = styled.span`
   font-weight: 400;
   font-family: 'Plus Jakarta Sans', sans-serif;
 
-  &:nth-child(4) {
+  &:nth-child(5) {
     margin-left: .4rem;
   }
 
@@ -77,6 +77,35 @@ const Description = styled.p`
   font-size: 1rem;
 `;
 
+const fadeInFadeOut = keyframes`
+  from {
+    opacity: 0;
+    transform: scale(0.0);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1,1);
+  }
+`;
+
+
+const LiveText = styled.p`
+  color: red;
+  margin: 0;
+  font-weight: 700;
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  margin-bottom: .5rem;
+
+  > svg {
+    animation ${fadeInFadeOut} 900ms ease-in infinite;
+    display: iniline-block;
+    margin-right: .4rem;
+
+    > path {
+      color: red;
+    }
+  }
+`;
 
 export default function PostIntroduction() {
   return (
@@ -132,6 +161,10 @@ export default function PostIntroduction() {
         <SwiperSlide key={i}>
           <FlexRow>
             <Content>
+              <LiveText>
+                <FontAwesomeIcon icon={faCircle} />
+                TERKINI
+              </LiveText>
               <Title>Halo ini judul</Title>
               <>
                 <Caption>
