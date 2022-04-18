@@ -32,7 +32,7 @@ const ImageContent = styled.div`
 `
 const Content = styled.div`
   flex: 2;
-  margin-left: 1rem;
+  margin-left: 1.5rem;
 
   > a {
     font-size: .9rem;

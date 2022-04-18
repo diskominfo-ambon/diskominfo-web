@@ -13,11 +13,8 @@ import Container from '@/components/container';
 import useWeather from '@/utils/weather';
 
 
-
 const title = 'Pemerintah Kota Ambon &#8211; Laman resmi Dinas komunikasi, informatika dan persandian kota Ambon';
 
-
-const Section = styled.div``;
 const WeatherContent = styled.div`
   display: flex;
   margin-top: 1.5rem;
@@ -44,7 +41,7 @@ export default function Home() {
   console.log({location, current, loading});
   console.log('home');
   return (
-    <div>
+    <>
       <Head>
         <title>
           {title}
@@ -53,61 +50,53 @@ export default function Home() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
-      <Section>
-        <Container>
-          <WeatherContent>
-            { loading ? (
-              <>
-                <Skeleton height={30} width={50}/>
-                <Skeleton height={30} style={{ marginLeft: 10 }} width={300}/>
-              </>
-            ) : (
-              <>
-                <WeatherIcon
-                  src={'http:'+ current.condition.icon}
-                  alt="weather icon"
-                  height="40"
-                  width="40"
-                  layout="fixed"
-                />
-                <WeatherText>
-                  Kondisi cuaca {location.name}, {location.region} {location.country} saat ini
-                </WeatherText>
-              </>
-            )}
-          </WeatherContent>
+      <Container>
+        <WeatherContent>
+          { loading ? (
+            <>
+              <Skeleton height={30} width={50}/>
+              <Skeleton height={30} style={{ marginLeft: 10 }} width={300}/>
+            </>
+          ) : (
+            <>
+              <WeatherIcon
+                src={'http:'+ current.condition.icon}
+                alt="weather icon"
+                height="40"
+                width="40"
+                layout="fixed"
+              />
+              <WeatherText>
+                Kondisi cuaca {location.name}, {location.region} {location.country} saat ini
+              </WeatherText>
+            </>
+          )}
+        </WeatherContent>
 
-          <PostIntroduction/>
-        </Container>
-      </Section>
+        <PostIntroduction/>
+      </Container>
 
-      <Section>
-        <BlockqouteNotice/>
-      </Section>
+      <BlockqouteNotice/>
 
-      <Section>
-        <Divider
-          title="Tujuan visi dan misi"
-          subtitle="Tujuan visi dan misi diskominfo pemerintah kota"
-        />
-        <GovermentGoals/>
-      </Section>
+      <Divider
+        title="Tujuan visi dan misi"
+        subtitle="Tujuan visi dan misi diskominfo pemerintah kota"
+      />
+      <GovermentGoals/>
 
-      <Section>
-        <Divider
-          title="Informasi kegiatan lainnya"
-          subtitle="Kumpulan informasi kegiatan terkini"
-        />
 
-        <Container>
-          {
-            [1,2,3,4,5].map(i =>
-              <Post key={i}/>
-            )
-          }
-        </Container>
+      <Divider
+        title="Informasi kegiatan lainnya"
+        subtitle="Kumpulan informasi kegiatan terkini"
+      />
 
-      </Section>
-    </div>
+      <Container>
+        {
+          [1,2,3,4,5].map(i =>
+            <Post key={i}/>
+          )
+        }
+      </Container>
+    </>
   );
 }
