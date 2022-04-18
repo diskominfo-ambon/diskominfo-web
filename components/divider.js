@@ -19,6 +19,7 @@ const Title = styled.h2`
   color: white;
   font-size: 1.4rem;
   margin-bottom: .9rem;
+  font-family: 'Plus Jakarta Sans', sans-serif;
 `;
 const Subtitle = styled.p`
   color: white;

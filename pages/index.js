@@ -5,8 +5,8 @@ import Skeleton from 'react-loading-skeleton'
 import 'react-loading-skeleton/dist/skeleton.css'
 
 import BlockqouteNotice from '@/components/blockqoute-notice';
-import GovermentGoals from '@/components/government-goals';
 import PostIntroduction from '@/components/post-introduction';
+import Announcement from '@/components/announcement';
 import Divider from '@/components/divider';
 import Post from '@/components/post';
 import Container from '@/components/container';
@@ -78,12 +78,9 @@ export default function Home() {
 
       <BlockqouteNotice/>
 
-      <Divider
-        title="Tujuan visi dan misi"
-        subtitle="Tujuan visi dan misi diskominfo pemerintah kota"
-      />
-      <GovermentGoals/>
-
+      <Container>
+        <Announcement/>
+      </Container>
 
       <Divider
         title="Informasi kegiatan lainnya"
