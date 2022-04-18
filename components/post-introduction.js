@@ -31,7 +31,8 @@ const Content = styled.div`
 
   > a {
     font-size: 1rem;
-    font-family: 'Noto Sans', sans-serif;
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    font-weight: 500;
     margin-top: .3rem;
     display: inline-block;
     text-decoration: none;
@@ -41,9 +42,10 @@ const Content = styled.div`
 const Title = styled.h1`
   display: block;
   margin: 0;
-  margin-bottom: .6rem;
+  margin-bottom: 1rem;
   color: var(--primary);
   font-size: 1.9rem;
+  font-family: 'Plus Jakarta Sans', sans-serif;
 `;
 const Caption = styled.span`
   margin-right: .4rem;
@@ -53,6 +55,7 @@ const Caption = styled.span`
   border-radius: 3px;
   font-size: .8rem;
   font-weight: 400;
+  font-family: 'Plus Jakarta Sans', sans-serif;
 
   &:nth-child(4) {
     margin-left: .4rem;
@@ -69,7 +72,7 @@ const Caption = styled.span`
   }`;
 const Description = styled.p`
   line-height: 29px;
-  font-family: 'Noto Sans', sans-serif;
+  font-family: 'Plus Jakarta Sans', sans-serif;
   font-weight: 400;
   font-size: 1rem;
 `;

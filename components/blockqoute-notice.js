@@ -23,8 +23,8 @@ const Blockqoute = styled.blockquote`
   font-size: 1.2rem;
   line-height: 33px;
   position: relative;
-  font-family: 'Noto Sans', sans-serif;
-  font-weight: 300;
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  font-weight: 400;
 
   &::before {
     content: '"';
@@ -37,9 +37,10 @@ const Blockqoute = styled.blockquote`
 const AuthorName = styled.span`
   color: white;
   font-size: .8rem;
-  font-family: 'Noto Sans', sans-serif;
+  font-family: 'Plus Jakarta Sans', sans-serif;
   position: relative;
   left: 40px;
+  font-weight: 300;
 `;
 
 export default function BlockqouteNotice() {

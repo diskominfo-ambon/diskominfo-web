@@ -21,8 +21,10 @@ const FlexRow = styled.div`
 const Title = styled.h2`
   display: block;
   margin: 0;
-  margin-bottom: .6rem;
+  margin-bottom: 1rem;
+  line-height: 26px;
   color: var(--primary);
+  font-family: 'Plus Jakarta Sans', sans-serif;
 `;
 const ImageContent = styled.div`
   position: relative;
@@ -33,24 +35,23 @@ const Content = styled.div`
   margin-left: 1rem;
 
   > a {
-    font-size: .8rem;
+    font-size: .9rem;
     font-family: 'Noto Sans', sans-serif;
-    margin-top: .8rem;
+    margin-top: 1rem;
     display: inline-block;
     text-decoration: none;
-    background-color: var(--primary);
-    color: white;
-    padding: .5rem .8rem;
-    border-radius: 4px;
+    color: var(--primary);
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    font-weight: 600;
   }
 `;
 const Description = styled.p`
-  font-size: .85rem;
-  font-family: 'Noto Sans', sans-serif;
-  font-weight: 300;
+  font-size: .9rem;
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  font-weight: 500;
   margin: 0;
-  margin-top: .5rem;
-  line-height: 25px;
+  margin-top: .8rem;
+  line-height: 27px;
 `;
 const Caption = styled.span`
   margin-right: .4rem;
@@ -60,6 +61,7 @@ const Caption = styled.span`
   border-radius: 3px;
   font-size: .8rem;
   font-weight: 400;
+  font-family: 'Plus Jakarta Sans', sans-serif;
 
   &:nth-child(4) {
     margin-left: .4rem;
@@ -78,7 +80,7 @@ const Caption = styled.span`
 
 const ImageCover = styled(Image)`
   object-fit: cover;
-  border-radius: 3px;
+  border-radius: 7px;
 `;
 
 export default function Post() {

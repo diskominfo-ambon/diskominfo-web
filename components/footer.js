@@ -5,17 +5,17 @@ import Container from './container';
 const contacts = [
   {
     'key': 'email',
-    'source': '#',
-    'title': 'Alamat email'
+    'source': 'mailto:diskominfosandi@ambon.go.id',
+    'title': 'diskominfosandi@ambon.go.id'
   },
   {
     'key': 'youtube',
-    'source': '#',
+    'source': 'https://www.youtube.com/c/PEMERINTAHKOTAAMBON',
     'title': 'Youtube'
   },
   {
     'key': 'ig',
-    'source': '#',
+    'source': 'https://www.instagram.com/tabea_amq',
     'title': 'Instagram'
   },
 ];
@@ -56,9 +56,10 @@ const Title = styled.h2`
 `;
 const Subtitle = styled.p`
   margin: 0;
-  font-family: 'Noto Sans', sans-serif;
+  font-family: 'Plus Jakarta Sans', sans-serif;
   font-size: .9rem;
   font-weight: 400;
+  margin-bottom: .5rem;
 
 `;
 const ListGroup = styled.ul`
@@ -70,8 +71,8 @@ const ListGroup = styled.ul`
 const ListItem = styled.li`
   margin-bottom: .5rem;
   font-size: .9rem;
-  font-family: 'Noto Sans', sans-serif;
-  font-weight: 300;
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  font-weight: 400;
 
   > a {
     text-decoration: none;
@@ -98,7 +99,7 @@ function Contact() {
       <ListGroup>
         { contacts.map(contact =>
           <ListItem key={contact.key}>
-            <a href={contact.source}>
+            <a target="__blank" href={contact.source}>
               {contact.title}
             </a>
           </ListItem>
@@ -114,7 +115,7 @@ function Supported() {
       <Heading>Dukungan</Heading>
       <ListGroup>
         <ListItem>
-          <a href="">
+          <a target="__blank" href="https://ambon.go.id">
             Laman pemerintah kota Ambon
             <span>
               (https://ambon.go.id)
@@ -122,7 +123,7 @@ function Supported() {
           </a>
         </ListItem>
         <ListItem>
-          <a href="">
+          <a href="https://malukuprov.go.id" target="__blank">
             Pemerintah provinsi Maluku
             <span>
               (https://malukuprov.go.id)
@@ -143,6 +144,9 @@ export default function Footer() {
           <Title>Hubungi kami</Title>
           <Subtitle>
             Dinas Komunikasi, Informatika & Persandian kota Ambon &copy; 2022
+          </Subtitle>
+          <Subtitle>
+            <strong>Jl. Sultan Hairun No. 1 Gd. C Lt. 4 kantor Balai kota Ambon</strong>
           </Subtitle>
         </div>
         <Supported/>
