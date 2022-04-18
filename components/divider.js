@@ -17,17 +17,16 @@ const ContainerRow = styled(Container)`
 `;
 const Title = styled.h2`
   color: white;
-  font-size: 1.2rem;
-  font-family: 'Raleway', sans-serif;
+  font-size: 1.4rem;
   margin-bottom: .9rem;
 `;
 const Subtitle = styled.p`
-color: white;
-font-size: .9rem;
-font-family: 'Raleway', sans-serif;
-margin: 0;
+  color: white;
+  font-size: 1rem;
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  margin: 0;
 
-@media screen and (min-width: ${({theme}) => theme.size.small}) {
+  @media screen and (min-width: ${({theme}) => theme.size.small}) {
     margin-left: .7rem;
 
     &::before {
