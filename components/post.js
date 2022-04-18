@@ -47,7 +47,7 @@ const Content = styled.div`
 const Description = styled.p`
   font-size: .85rem;
   font-family: 'Noto Sans', sans-serif;
-  font-weight: 400;
+  font-weight: 300;
   margin: 0;
   margin-top: .5rem;
   line-height: 25px;

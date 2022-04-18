@@ -3,43 +3,18 @@ import styled from 'styled-components'
 
 import BlockqouteNotice from '@/components/blockqoute-notice';
 import GovermentGoals from '@/components/government-goals';
+import PostIntroduction from '@/components/post-introduction';
 import Divider from '@/components/divider';
 import Post from '@/components/post';
 import Container from '@/components/container';
 
+
 const title = 'Pemerintah Kota Ambon &#8211; Laman resmi Dinas komunikasi, informatika dan persandian kota Ambon';
 
 
-
-const WeatherText = styled.p``;
 const Section = styled.div``;
-const SectionTitle = styled.h2``;
-const SectionSubtitle = styled.p``;
 
-const Box = styled.div`
-  border: 1px solid #ddd;
-  padding: .8rem 1rem;
-  border-radius: 3px;
-  margin-bottom: .9rem;
-  font-size: .9rem;
 
-  &:last-child {
-    margin-bottom: 0;
-  }
-`;
-
-const ContainerFlexRow = styled(Container)`
-  display: flex;
-  align-items: center;
-  justify-content: space-evenly;
-  width: 1000px;
-`;
-const Heading = styled.div`
-  display: flex:
-  font-size: 1.3rem;
-  text-align: center;
-
-`;
 
 export default function Home() {
   return (
@@ -53,7 +28,9 @@ export default function Home() {
       </Head>
 
       <Section>
-        <WeatherText>Informasi cuaca</WeatherText>
+        <Container>
+          <PostIntroduction/>
+        </Container>
       </Section>
 
       <Section>
@@ -70,13 +47,13 @@ export default function Home() {
 
       <Section>
         <Divider
-          title="Informasi  berita lainnya"
-          subtitle="Kumpulan informasi dan berita terkini"
+          title="Informasi kegiatan lainnya"
+          subtitle="Kumpulan informasi kegiatan terkini"
         />
 
         <Container>
           {
-            [1,2,3,4,5,6,7,8,9,10].map(i =>
+            [1,2,3,4,5].map(i =>
               <Post key={i}/>
             )
           }
