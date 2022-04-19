@@ -57,6 +57,12 @@ const DropdownItem = styled.li`
   }
 `;
 
+const ArrowDownIcon = styled(FontAwesomeIcon)`
+  transition: 300ms ease;
+  transform: rotate(${props => props.rotate ? '180deg' : '0deg'});
+
+`;
+
 
 function Dropdown() {
   return (
@@ -107,8 +113,9 @@ export default function LinkDropdown(props) {
       </style>
       <DropdownText onClick={() => setVisible(visible => !visible)}>
         {text}
-        <FontAwesomeIcon icon={faAngleDown} />
+        <ArrowDownIcon rotate={visible} icon={faAngleDown} />
       </DropdownText>
+
       <CSSTransition
         unmountOnExit
         in={visible}
