@@ -6,6 +6,7 @@ import 'react-loading-skeleton/dist/skeleton.css'
 
 import BlockqouteNotice from '@/components/blockqoute-notice';
 import PostIntroduction from '@/components/post-introduction';
+import CovidIntroduction from '@/components/covid-introduction';
 import Announcement from '@/components/announcement';
 import Divider from '@/components/divider';
 import Post from '@/components/post';
@@ -78,8 +79,13 @@ export default function Home() {
 
       <BlockqouteNotice/>
 
+
       <Container>
         <Announcement/>
+      </Container>
+
+      <Container>
+        <CovidIntroduction/>
       </Container>
 
       <Divider

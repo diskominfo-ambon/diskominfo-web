@@ -42,12 +42,15 @@ const ContainerFlexRow = styled(Container)`
   }
 `;
 
-const Heading = styled.h3``;
+const Heading = styled.h3`
+  font-family: 'Plus Jakarta Sans', sans-serif;
+`;
 
 const Title = styled.h2`
   font-size: 1.8rem;
   margin-bottom: .8rem;
   color: var(--primary);
+  font-family: 'Plus Jakarta Sans', sans-serif;
 
   @media screen and (max-width: ${({theme}) => theme.size.medium}) {
     font-size: 1.4rem;

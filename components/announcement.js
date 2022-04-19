@@ -6,6 +6,17 @@ import yesterday from '@/utils/yesterday';
 const Title = styled.h2`
   color: var(--primary);
   font-family: 'Plus Jakarta Sans', sans-serif;
+  font-weight: 600;
+
+  &::after {
+    content: '';
+    display: block;
+    background: url('/static/img/underline.svg');
+    background-repeat: no-repeat;
+    background-size: 100%;
+    height: 10px;
+    margin-top: .3rem;
+  }
 `;
 const FlexRow = styled.div`
   display: flex;
@@ -71,7 +82,7 @@ const ListGroup = styled.ul`
 `;
 
 const ListItem = styled.li`
-  border-bottom: 1px solid #ddd;
+  border-bottom: 1px dashed #ddd;
   padding: 1.4rem 0;
 
   &:last-child {
@@ -97,10 +108,6 @@ const Caption = styled.span`
   font-size: .8rem;
   font-weight: 400;
   font-family: 'Plus Jakarta Sans', sans-serif;
-
-  &:nth-child(4) {
-    margin-left: .4rem;
-  }
 
   > svg  {
     margin-right: .3rem;
@@ -150,9 +157,11 @@ export default function Announcement() {
         </Content>
       </FlexRow>
       <ListGroup>
-        <ListItem>
-          <AnnouncementCard/>
-        </ListItem>
+        {[1,2,3,4].map(val =>
+          <ListItem key={val}>
+            <AnnouncementCard/>
+          </ListItem>
+        )}
       </ListGroup>
     </>
   );
@@ -173,7 +182,6 @@ function AnnouncementCard() {
           <FontAwesomeIcon icon={faClock} />
           12 Januari 2000
         </Caption>
-        -
         <Caption>
           <FontAwesomeIcon icon={faHashtag} />
           kominfo
@@ -184,7 +192,7 @@ function AnnouncementCard() {
       </Description>
       <AttachmentTextNotice>
         <FontAwesomeIcon icon={faCircleInfo} />
-        Post ini terdapat dokumen yang dapat Anda tinjau
+        Memilki dokumen
       </AttachmentTextNotice>
     </>
   );

@@ -15,6 +15,7 @@ import 'swiper/css/navigation';
 const FlexRow = styled.div`
   display: flex;
   margin: 2rem 0;
+  margin-bottom: 3rem;
   align-items: center;
 `;
 
@@ -57,9 +58,6 @@ const Caption = styled.span`
   font-weight: 400;
   font-family: 'Plus Jakarta Sans', sans-serif;
 
-  &:nth-child(5) {
-    margin-left: .4rem;
-  }
 
   > svg  {
     margin-right: .3rem;
@@ -175,7 +173,6 @@ export default function PostIntroduction() {
                   <FontAwesomeIcon icon={faClock} />
                   12 Januari 2000
                 </Caption>
-                -
                 <Caption>
                   <FontAwesomeIcon icon={faHashtag} />
                   kominfo
