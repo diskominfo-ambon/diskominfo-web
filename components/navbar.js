@@ -1,7 +1,10 @@
-import { faSearch } from '@fortawesome/free-solid-svg-icons';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import Link from 'next/link';
 import styled from 'styled-components';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import Container from './container';
+import { faSearch } from '@fortawesome/free-solid-svg-icons';
+import LinkDropdown from './link-dropdown';
+
 
 
 const ContainerFlexRow = styled(Container)`
@@ -98,7 +101,9 @@ export default function Navbar() {
           </NavbarBrand>
           <NavbarCollapse>
             <NavbarItem>Beranda</NavbarItem>
-            <NavbarItem>Mengenal kami</NavbarItem>
+            <NavbarItem>
+              <LinkDropdown text="Mengenal kami" />
+            </NavbarItem>
             <NavbarItem>Pengumuman</NavbarItem>
             <NavbarItem>Informasi agenda</NavbarItem>
             <NavbarItem>Layanan</NavbarItem>

@@ -39,8 +39,7 @@ const WeatherText = styled.p`
 export default function Home() {
 
   const [{ location, current }, loading] = useWeather();
-  console.log({location, current, loading});
-  console.log('home');
+
   return (
     <>
       <Head>
