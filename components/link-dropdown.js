@@ -5,7 +5,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faAngleDown } from '@fortawesome/free-solid-svg-icons';
 import Container from './container';
 import { CSSTransition } from 'react-transition-group';
-
+import PropTypes from 'prop-types';
 
 const DropdownText = styled.a`
   font-family: 'Plus Jakarta Sans', sans-serif;
@@ -26,7 +26,7 @@ const DropdownCollapse = styled.div`
   width: 100%;
   position: absolute;
   left: 0;
-  z-index: 2;
+  z-index: 10;
   top: 5.825rem;
   right: 0;
   border-bottom: 1px solid #ddd;
@@ -41,8 +41,10 @@ const DropdownMenu = styled.ul`
 const DropdownItem = styled.li`
   font-family: 'Plus Jakarta Sans', sans-serif;
   font-weight: 500;
-  &:nth-child(odd) {
-    border-bottom: 1px solid #ddd;
+  border-bottom: 1px dashed #ddd;
+
+  &:last-child {
+    border-bottom: none;
   }
 
   > a {
@@ -64,29 +66,35 @@ const ArrowDownIcon = styled(FontAwesomeIcon)`
 `;
 
 
-function Dropdown() {
+function Dropdown(props) {
+
+  const { items } = props;
+
   return (
     <DropdownCollapse>
       <Container>
         <DropdownMenu>
-          <DropdownItem>
-            <Link href="/i">
-              Struktur organisasi
-            </Link>
-          </DropdownItem>
-          <DropdownItem>
-            <Link href="/i">
-              Sejarah, visi dan misi
-            </Link>
-          </DropdownItem>
+          {items.map((item, i) =>
+            <DropdownItem key={i}>
+              <Link href={item.to} passHref>
+                {item.text}
+              </Link>
+            </DropdownItem>
+          )}
         </DropdownMenu>
       </Container>
     </DropdownCollapse>
   );
 }
 
+
+LinkDropdown.propTypes = {
+  text: PropTypes.string,
+  menus: PropTypes.array
+}
+
 export default function LinkDropdown(props) {
-  const { text } = props;
+  const { text, menus } = props;
   const [visible, setVisible] = useState(false);
 
 
@@ -139,7 +147,7 @@ export default function LinkDropdown(props) {
         timeout={500}
         classNames="dropdown__menu"
       >
-        <Dropdown />
+        <Dropdown items={menus} />
       </CSSTransition>
     </>
   );

@@ -102,11 +102,31 @@ export default function Navbar() {
           <NavbarCollapse>
             <NavbarItem>Beranda</NavbarItem>
             <NavbarItem>
-              <LinkDropdown text="Mengenal kami" />
+              <LinkDropdown
+                text="Mengenal kami"
+                menus={[
+                  { to: '', text: 'Sejarah'},
+                  { to: '', text: 'Struktur organisasi'},
+                  { to: '', text: 'Tugas dan fungsi'},
+                  { to: '', text: 'Command Center'},
+                ]}
+              />
             </NavbarItem>
             <NavbarItem>Pengumuman</NavbarItem>
             <NavbarItem>Informasi agenda</NavbarItem>
-            <NavbarItem>Layanan</NavbarItem>
+            <NavbarItem>
+              <LinkDropdown
+                text="Layanan"
+                menus={[
+                  { to: '', text: 'E-Lapor - Layanan lapor pengaduan masyarakat'},
+                  { to: '', text: 'LPSE - Pengadaan Barang atau Jasa secara elektronik'},
+                  { to: '', text: 'Sistem informasi data statistik'},
+                  { to: '', text: 'Ambon Access'},
+                  { to: '', text: 'DPMPTSP - Dinas Penanaman Modal dan Pelayanan Terpadu Satu Pintu'},
+                  { to: '', text: 'SIMAK - Sistem Informasi Manajemen Administrasi Kependudukan'},
+                ]}
+              />
+            </NavbarItem>
           </NavbarCollapse>
         </Content>
         <FormGroup>
