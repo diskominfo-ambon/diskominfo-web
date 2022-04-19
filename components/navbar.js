@@ -4,8 +4,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import Container from './container';
 import { faSearch } from '@fortawesome/free-solid-svg-icons';
 import LinkDropdown from './link-dropdown';
-
-
+import { useRouter } from 'next/router';
 
 const ContainerFlexRow = styled(Container)`
   display: flex;
@@ -71,8 +70,31 @@ const NavbarItem = styled.li`
   padding: .7rem .9rem;
   font-size: .9rem;
 
+
   &:first-child {
     padding: .7rem .9rem .7rem 0;
+  }
+
+  > a {
+    text-decoration: none;
+    position: relative;
+
+    ${
+      props => props.active && `
+        color: #0564A6;
+
+        &::before {
+          content: '';
+          display: block;
+          position: absolute;
+          width: 100%;
+          height: 3px;
+          background-color: #0564A6;
+          top: 1.75rem;
+        }
+      `
+    }
+
   }
 
   &::after {
@@ -92,6 +114,9 @@ const NavbarItem = styled.li`
 `;
 
 export default function Navbar() {
+
+  const router = useRouter();
+
   return (
     <Header>
       <ContainerFlexRow>
@@ -100,7 +125,11 @@ export default function Navbar() {
             DISKOMINFO KOTA AMBON
           </NavbarBrand>
           <NavbarCollapse>
-            <NavbarItem>Beranda</NavbarItem>
+            <NavbarItem active={router.pathname === '/'}>
+              <Link href="" passHref>
+                Beranda
+              </Link>
+            </NavbarItem>
             <NavbarItem>
               <LinkDropdown
                 text="Mengenal kami"
