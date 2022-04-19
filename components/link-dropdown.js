@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import Link from 'next/link';
 import styled from 'styled-components';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
@@ -88,6 +88,23 @@ function Dropdown() {
 export default function LinkDropdown(props) {
   const { text } = props;
   const [visible, setVisible] = useState(false);
+
+
+  useEffect(() => {
+
+    function invisibleDropdown(e) {
+      const el = e.target;
+      const isDrodownCollapse = /link-dropdown/.test(el.getAttribute('class'));
+
+      if (!isDrodownCollapse) setVisible(false);
+    }
+
+    document.addEventListener('click', invisibleDropdown);
+
+    return () => {
+      document.removeEventListener('click', invisibleDropdown);
+    }
+  }, []);
 
   return (
     <>
