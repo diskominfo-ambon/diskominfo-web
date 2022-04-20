@@ -126,7 +126,7 @@ export default function Navbar() {
           </NavbarBrand>
           <NavbarCollapse>
             <NavbarItem active={router.pathname === '/'}>
-              <Link href="" passHref>
+              <Link href="/" passHref>
                 Beranda
               </Link>
             </NavbarItem>
@@ -141,7 +141,9 @@ export default function Navbar() {
                 ]}
               />
             </NavbarItem>
-            <NavbarItem>Pengumuman</NavbarItem>
+            <NavbarItem  active={router.pathname === '/pengumuman'}>
+              <Link href="/pengumuman" passHref>Pengumuman</Link>
+            </NavbarItem>
             <NavbarItem>Informasi agenda</NavbarItem>
             <NavbarItem>
               <LinkDropdown

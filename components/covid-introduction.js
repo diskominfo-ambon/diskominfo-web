@@ -1,5 +1,9 @@
+import { useEffect, useState } from 'react';
 import styled from 'styled-components';
 import Link from 'next/link';
+import axios from 'axios';
+import Skeleton from 'react-loading-skeleton';
+import 'react-loading-skeleton/dist/skeleton.css'
 
 const Title = styled.h2`
   font-family: 'Plus Jakarta Sans', sans-serif;
@@ -64,7 +68,7 @@ const CardLabel = styled.h3`
   margin: 0;
   font-family: 'Plus Jakarta Sans', sans-serif;
   font-size: .9rem;
-  color: orange;
+  color: ${props => props.color};
 `;
 const CardParagraph = styled.p`
   font-family: 'Plus Jakarta Sans', sans-serif;
@@ -95,6 +99,7 @@ const Showmore = styled.a`
   color: var(--primary);
   cursor: pointer;
   transition: 300ms ease;
+  text-decoration: none;
 
   &:hover {
     background-color: var(--primary);
@@ -111,22 +116,66 @@ const TextUpdate = styled.span`
   font-size: .8rem;
 `;
 
-function CovidCard() {
+function CovidCard(props) {
+  const { label, value, variant } = props;
+
   return (
     <Card>
-      <CardLabel>Dirawat</CardLabel>
+      <CardLabel color={variant}>{label}</CardLabel>
       <CardBody>
         <CardParagraph>Ambon, Maluku</CardParagraph>
-        <CardValue><strong>13.854</strong></CardValue>
+        <CardValue><strong>{value}</strong></CardValue>
       </CardBody>
     </Card>
   );
 }
 
 
+function useCovid19() {
+  const [state, setState] = useState({});
+  const [loading, setLoading] = useState(true);
+
+  useEffect(() => {
+    (async function() {
+      try {
+        const URL = 'https://apicovid19indonesia-v2.vercel.app/api/indonesia/provinsi/more?name=maluku';
+
+        const { data } = await axios.get(URL);
+        setState(data[0]);
+      } catch(e) {
+        console.warn(e);
+      } finally {
+        setLoading(false);
+      }
+    })();
+  }, []);
+
+
+  return [state, loading];
+
+}
+
 export default function CovidIntroduction() {
+
+  const [data, loading] = useCovid19();
+
+  const lastUpdated = new Date(data?.last_date);
+  const lastUpdatedLabel = !loading
+    ? new Intl.DateTimeFormat('id-ID', { dateStyle: 'full' })
+      .format(lastUpdated)
+    : null;
+
+
   return (
     <>
+      <style global jsx>{`
+        .react-loading-skeleton {
+          margin-right: .6rem;
+          display: inline-block;
+        }
+      `}
+      </style>
+
       <Title>Informasi Covid-19</Title>
       <FlexRow>
         <Content>
@@ -136,19 +185,45 @@ export default function CovidIntroduction() {
             Dapatkan informasi soal tindakan yang harus dilakukan jika tertular Covid-19, juga tren
             penanganan pandemi di kota Ambon.
           </SubHeading>
-          <Link href="/i">
+          <Link href="/i" passHref>
             <Showmore>Selengkapnya</Showmore>
           </Link>
         </Content>
         <Content>
-          <div>
-            <CovidCard />
-            <CovidCard />
-            <CovidCard />
-          </div>
-          <TextUpdate>
-            Update Terakhir: Senin, 18 Apr 2022 17:00
-          </TextUpdate>
+          {loading ? (
+            <>
+              <Skeleton
+                inline
+                count={3}
+                height={230}
+                width={200}
+              />
+            </>
+          ) : (
+            <>
+              <div>
+                <CovidCard
+                  value={data.dirawat}
+                  label="Dirawat"
+                  variant="orange"
+                />
+                <CovidCard
+                  value={data.sembuh}
+                  label="Sembuh"
+                  variant="green"
+                />
+                <CovidCard
+                  value={data.meninggal}
+                  label="Mengiggal"
+                  variant="red"
+                />
+              </div>
+              <TextUpdate>
+                Update Terakhir: {lastUpdatedLabel}
+              </TextUpdate>
+            </>
+          )}
+
         </Content>
       </FlexRow>
     </>
