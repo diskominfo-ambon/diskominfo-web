@@ -1,0 +1,13 @@
+  {
+    "Sunny": "cerah",
+    "Partly cloudy": "berawan",
+    "Cloudy": "berawan",
+    "Overcast": "mendung",
+    "Mist": "kabut",
+    "Patchy rain nearby": "hujan merata disekitar",
+    "Patchy sleet nearby": "hujan tambal sulam di sekitar",
+    "Patchy freezing drizzle nearby": "gerimis beku merata di sekitar",
+    "Thundery outbreaks in nearby": "wabah petir di sekitar",
+    "Fog": "kabut",
+    "Freezing fog": "kabut beku"
+  }
