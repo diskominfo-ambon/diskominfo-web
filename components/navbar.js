@@ -130,11 +130,13 @@ export default function Navbar() {
                 Beranda
               </Link>
             </NavbarItem>
-            <NavbarItem>
+            <NavbarItem
+              active={/mengenal-kami/.test(router.pathname)}
+            >
               <LinkDropdown
                 text="Mengenal kami"
                 menus={[
-                  { to: '', text: 'Sejarah'},
+                  { to: '/mengenal-kami/sejarah', text: 'Sejarah'},
                   { to: '', text: 'Struktur organisasi'},
                   { to: '', text: 'Tugas dan fungsi'},
                   { to: '', text: 'Command Center'},

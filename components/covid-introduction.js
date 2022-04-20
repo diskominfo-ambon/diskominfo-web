@@ -214,7 +214,7 @@ export default function CovidIntroduction() {
                 />
                 <CovidCard
                   value={data.meninggal}
-                  label="Mengiggal"
+                  label="Meninggal"
                   variant="red"
                 />
               </div>
