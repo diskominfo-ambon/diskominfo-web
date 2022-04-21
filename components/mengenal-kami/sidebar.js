@@ -73,13 +73,13 @@ export default function Sidebar() {
 
       <SidebarContent>
         <SidebarItem active={/sejarah/.test(router.pathname)}>
-          <Link href="/" passHref>Sejarah</Link>
+          <Link href="/mengenal-kami/sejarah" passHref>Sejarah</Link>
         </SidebarItem>
         <SidebarItem>
           <Link href="/" passHref>Struktur organisasi</Link>
         </SidebarItem>
-        <SidebarItem>
-          <Link href="/" passHref>Tugas dan fungsi</Link>
+        <SidebarItem active={/tugas/.test(router.pathname)}>
+          <Link href="/mengenal-kami/tugas" passHref>Tugas dan fungsi</Link>
         </SidebarItem>
         <SidebarItem>
           <Link href="/" passHref>Command Center</Link>

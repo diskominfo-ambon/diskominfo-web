@@ -138,7 +138,7 @@ export default function Navbar() {
                 menus={[
                   { to: '/mengenal-kami/sejarah', text: 'Sejarah'},
                   { to: '', text: 'Struktur organisasi'},
-                  { to: '', text: 'Tugas dan fungsi'},
+                  { to: '/mengenal-kami/tugas', text: 'Tugas dan fungsi'},
                   { to: '', text: 'Command Center'},
                 ]}
               />
