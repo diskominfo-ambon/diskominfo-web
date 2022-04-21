@@ -146,7 +146,9 @@ export default function Navbar() {
             <NavbarItem  active={router.pathname === '/pengumuman'}>
               <Link href="/pengumuman" passHref>Pengumuman</Link>
             </NavbarItem>
-            <NavbarItem>Informasi agenda</NavbarItem>
+            <NavbarItem active={router.pathname === '/agenda'}>
+              <Link href="/agenda" passHref>Informasi agenda</Link>
+            </NavbarItem>
             <NavbarItem>
               <LinkDropdown
                 text="Layanan"
