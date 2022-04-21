@@ -77,6 +77,13 @@ export default function Agenda() {
         "Beranda",
         "Informasi agenda"
       ]} />
+      <Modal
+        show={show}
+        heading="Judul modal"
+        onDismiss={() => setShow(show => !show)}
+      >
+        Hello world
+      </Modal>
 
       <center>
         <Heading>
@@ -86,6 +93,8 @@ export default function Agenda() {
           Semua informasi tinjauan agenda kegiatan Dinas komunikasi, informatika & persandian kota Ambon.
         </Paragraph>
       </center>
+
+
 
       <FullCalendar
         plugins={[ dayGridPlugin, interactionPlugin ]}

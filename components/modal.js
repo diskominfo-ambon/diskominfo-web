@@ -1,4 +1,5 @@
 import { useEffect } from 'react';
+import { createPortal } from 'react-dom';
 import styled from 'styled-components';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faXmark } from '@fortawesome/free-solid-svg-icons';
@@ -81,7 +82,7 @@ export default function Modal(props) {
     }
   }, []);
 
-  return (
+  return createPortal(
     <>
       <style global jsx>{`
         .modal__container-enter {
@@ -141,5 +142,5 @@ export default function Modal(props) {
         </ModalContainer>
       </CSSTransition>
     </>
-  );
+  , document.getElementById('portal'));
 }
