@@ -69,10 +69,8 @@ export default function Modal(props) {
       const el = e.target;
       const pattern = /modal__ModalContainer/;
       const isModalContainer = pattern.test(el.getAttribute('class'));
-      console.log(isModalContainer, el.getAttribute('class'));
-      if (isModalContainer) {
-        onDismiss();
-      }
+
+      if (isModalContainer) onDismiss();
 
     }
     document.addEventListener('click', onBackdropClick);
