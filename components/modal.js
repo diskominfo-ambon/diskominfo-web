@@ -16,7 +16,7 @@ const ModalContainer = styled.div`
   bottom: 0;
   left: 0;
   right: 0;
-  background: rgba(4%, 29%, 47%, 0.80);
+  background: rgba(4%, 29%, 47%, 0.60);
   position: fixed;
   backdrop-filter: blur(2px);
 `;
@@ -37,7 +37,6 @@ const ModalContent = styled.div`
   z-index: 3;
   width: 600px;
   border-radius: 4px;
-  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.30);
 `;
 
 const Button = styled.button`

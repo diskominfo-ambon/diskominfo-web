@@ -75,6 +75,7 @@ export default function Agenda() {
 
       <Breadcrumb paths={[
         "Beranda",
+        "Informasi",
         "Informasi agenda"
       ]} />
       <Modal

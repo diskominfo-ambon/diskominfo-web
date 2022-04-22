@@ -2,7 +2,7 @@ import styled, { keyframes } from 'styled-components';
 import Image from 'next/image';
 import Link from 'next/link';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faUserCheck, faClock, faHashtag, faCircle } from "@fortawesome/free-solid-svg-icons";
+import { faUserCheck, faClock, faCircle } from "@fortawesome/free-solid-svg-icons";
 import { Navigation, Pagination, EffectFade, Autoplay } from 'swiper';
 import { Swiper, SwiperSlide } from 'swiper/react';
 
@@ -63,10 +63,6 @@ const Caption = styled.span`
     margin-right: .3rem;
     display: inline-block;
 
-    > path {
-      fill: var(--light);
-    }
-
   }`;
 const Description = styled.p`
   line-height: 29px;
@@ -103,6 +99,12 @@ const LiveText = styled.p`
       color: red;
     }
   }
+`;
+
+
+const TagLabel = styled(Caption)`
+  background-color: rgba(0%, 58%, 68%, .15);
+  border-color: rgba(0%, 58%, 68%, .25);
 `;
 
 export default function PostIntroduction() {
@@ -173,10 +175,9 @@ export default function PostIntroduction() {
                   <FontAwesomeIcon icon={faClock} />
                   12 Januari 2000
                 </Caption>
-                <Caption>
-                  <FontAwesomeIcon icon={faHashtag} />
+                <TagLabel>
                   kominfo
-                </Caption>
+                </TagLabel>
               </>
               <Description>
                 Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.
