@@ -76,9 +76,18 @@ function Dropdown(props) {
         <DropdownMenu>
           {items.map((item, i) =>
             <DropdownItem key={i}>
-              <Link href={item.to} passHref>
-                {item.text}
-              </Link>
+              {
+                item?.blank
+                ? (
+                  <a href={item.to} target="__blank">
+                    {item.text}
+                  </a>
+                ) : (
+                  <Link href={item.to} passHref>
+                    {item.text}
+                  </Link>
+                )
+              }
             </DropdownItem>
           )}
         </DropdownMenu>
