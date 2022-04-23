@@ -2,6 +2,7 @@ import PropTypes from "prop-types";
 import styled from 'styled-components';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faAngleRight } from '@fortawesome/free-solid-svg-icons';
+import { Fragment } from "react";
 
 Breadcrumb.propTypes = {
   paths: PropTypes.array
@@ -35,12 +36,12 @@ export default function Breadcrumb({paths}) {
     }
 
     return (
-      <>
-        <BreadcrumbItem key={path}>{path}</BreadcrumbItem>
-        <BreadcrumbItem key={path + it}>
+      <Fragment key={path + it}>
+        <BreadcrumbItem>{path}</BreadcrumbItem>
+        <BreadcrumbItem>
           <FontAwesomeIcon icon={faAngleRight} />
         </BreadcrumbItem>
-      </>
+      </Fragment>
 
     )
   });

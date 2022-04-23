@@ -5,7 +5,7 @@ import Link from 'next/link';
 import Image from 'next/image';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faClock, faUserCheck } from '@fortawesome/free-solid-svg-icons';
-import { InlineReactionButtons, InlineShareButtons } from 'sharethis-reactjs';
+import { InlineShareButtons } from 'sharethis-reactjs';
 
 
 const Flex = styled(Container)`

@@ -8,14 +8,14 @@ const withTM = require("next-transpile-modules")([
   "@fullcalendar/interaction"
 ]);
 
-const nextConfig =withTM({
+const nextConfig = withTM({
   reactStrictMode: true,
   images: {
     domains: [
       "images.unsplash.com",
       "cdn.weatherapi.com"
     ]
-  }
+  },
 });
 
 module.exports = nextConfig

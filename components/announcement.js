@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faClock, faUserCheck, faHashtag, faCircleInfo } from '@fortawesome/free-solid-svg-icons';
+import { faClock, faUserCheck, faCircleInfo } from '@fortawesome/free-solid-svg-icons';
 import yesterday from '@/utils/yesterday';
 
 const Title = styled.h2`
@@ -120,6 +120,12 @@ const Caption = styled.span`
   }
 `;
 
+const TagLabel = styled(Caption)`
+  background-color: rgba(0%, 58%, 68%, .15);
+  border-color: rgba(0%, 58%, 68%, .25);
+`;
+
+
 const Description = styled.p`
   font-family: 'Plus Jakarta Sans', sans-serif;
   font-size: .9rem;
@@ -182,10 +188,9 @@ function AnnouncementCard() {
           <FontAwesomeIcon icon={faClock} />
           12 Januari 2000
         </Caption>
-        <Caption>
-          <FontAwesomeIcon icon={faHashtag} />
+        <TagLabel>
           kominfo
-        </Caption>
+        </TagLabel>
       </>
       <Description>
         Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.
