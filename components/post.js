@@ -1,9 +1,8 @@
 import styled from 'styled-components';
-import Image from 'next/image';
 import Link from 'next/link';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faUserCheck, faClock } from "@fortawesome/free-solid-svg-icons";
-
+import Image from '@/components/image';
 
 const FlexRow = styled.div`
   display: flex;
@@ -75,21 +74,17 @@ const TagLabel = styled(Caption)`
   border-color: rgba(0%, 58%, 68%, .25);
 `;
 
-const ImageCover = styled(Image)`
-  object-fit: cover;
-  border-radius: 7px;
-`;
+
 
 export default function Post() {
   return (
     <FlexRow>
       <ImageContent>
-        <ImageCover
+        <Image
           src="https://images.unsplash.com/photo-1644982652061-df82282e178d?ixlib=rb-1.2.1&ixid=MnwxMjA3fDF8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1740&q=80"
           alt="cover"
           height="200"
           width="300"
-          layout="responsive"
         />
       </ImageContent>
       <Content>
@@ -108,7 +103,7 @@ export default function Post() {
           </TagLabel>
         </>
         <Description>
-          Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.
+          Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industrys standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.
         </Description>
 
         <Link href="/i">Baca selengkapnya</Link>

@@ -142,10 +142,9 @@ function useCovid19() {
 
         const { data } = await axios.get(URL);
         setState(data[0]);
+        setLoading(false);
       } catch(e) {
         console.warn(e);
-      } finally {
-        setLoading(false);
       }
     })();
   }, []);

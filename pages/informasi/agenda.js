@@ -8,7 +8,12 @@ import styled from 'styled-components';
 import idLocale from '@fullcalendar/core/locales/id';
 import Container from "@/components/container";
 import Breadcrumb from '@/components/breadcrumb';
-import Modal from '@/components/modal';
+import dynamic from 'next/dynamic';
+
+const Modal = dynamic(
+  () => import('@/components/modal'),
+  { ssr: false }
+);
 
 
 

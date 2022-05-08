@@ -13,10 +13,9 @@ export default function useWeather(city = 'Ambon') {
         const { data } = await axios.get(URL);
 
         setState(data);
+        setLoading(false);
       } catch (err) {
         console.log('weatherapi: ' + err);
-      } finally {
-        setLoading(false);
       }
     })();
 

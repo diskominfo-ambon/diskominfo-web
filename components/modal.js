@@ -72,11 +72,14 @@ export default function Modal(props) {
       if (isModalContainer) onDismiss();
 
     }
+
     document.addEventListener('click', onBackdropClick);
 
+
     return () => {
-      document.removeEventListener('click', onBackdropClick)
+      document.removeEventListener('click', onBackdropClick);
     }
+  // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   return createPortal(

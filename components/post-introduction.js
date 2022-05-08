@@ -1,10 +1,10 @@
 import styled, { keyframes } from 'styled-components';
-import Image from 'next/image';
 import Link from 'next/link';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faUserCheck, faClock, faCircle } from "@fortawesome/free-solid-svg-icons";
 import { Navigation, Pagination, EffectFade, Autoplay } from 'swiper';
 import { Swiper, SwiperSlide } from 'swiper/react';
+import Image from '@/components/image';
 
 import 'swiper/css';
 import 'swiper/css/autoplay';
@@ -22,10 +22,7 @@ const FlexRow = styled.div`
 const ImageContent = styled.div`
   flex: 2;
 `;
-const ImageCover = styled(Image)`
-  border-radius: 10px;
-  object-fit: cover;
-`;
+
 const Content = styled.div`
   flex: 1.5;
   margin-right: 1rem;
@@ -112,10 +109,9 @@ export default function PostIntroduction() {
     <Swiper
       navigation
       pagination
-      effect="fade"
       spaceBetween={40}
       slidesPerView={1}
-      modules={[Navigation, Pagination, EffectFade, Autoplay]}
+      modules={[Navigation, Pagination, Autoplay]}
       className="mySwiper"
     >
       <style global jsx>{`
@@ -180,18 +176,17 @@ export default function PostIntroduction() {
                 </TagLabel>
               </>
               <Description>
-                Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.
+                Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industrys standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.
               </Description>
 
               <Link href="/i">Baca selengkapnya</Link>
             </Content>
             <ImageContent>
-              <ImageCover
+              <Image
                 src="https://images.unsplash.com/photo-1644982652061-df82282e178d?ixlib=rb-1.2.1&ixid=MnwxMjA3fDF8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1740&q=80"
                 alt="cover"
                 height="200"
                 width="300"
-                layout="responsive"
               />
 
             </ImageContent>
