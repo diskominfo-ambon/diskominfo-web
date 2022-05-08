@@ -2,6 +2,7 @@ import styled from 'styled-components';
 import Container from '@/components/container';
 import Breadcrumb from '@/components/breadcrumb';
 import Announcement from '@/components/announcement';
+import AnnouncementToolbar from '@/components/announcement-toolbar';
 
 
 const Title = styled.h2`
@@ -47,12 +48,15 @@ export default function Index() {
             Semua informasi pengumuman yang diterbitkan oleh Dinas komunikasi, informatika dan persandian kota Ambon
           </Subtitle>
         </center>
-
-        <Announcements>
-          <AnnouncementItem>
-            <Announcement/>
-          </AnnouncementItem>
-        </Announcements>
+        <AnnouncementToolbar>
+          <Announcements>
+            <AnnouncementItem>
+              {[...Array(5)].map(i =>
+                <Announcement key={i} />
+              )}
+            </AnnouncementItem>
+          </Announcements>
+        </AnnouncementToolbar>
       </Content>
     </Container>
   );

@@ -1,12 +1,20 @@
 import Head from 'next/head';
 import styled from 'styled-components'
-import Image from 'next/image';
 import Skeleton from 'react-loading-skeleton'
 import 'react-loading-skeleton/dist/skeleton.css'
+import { Navigation, Pagination, EffectFade, Autoplay } from 'swiper';
+import { Swiper, SwiperSlide } from 'swiper/react';
+import Image from '@/components/image';
+import 'swiper/css';
+import 'swiper/css/autoplay';
+import 'swiper/css/effect-fade';
+import 'swiper/css/pagination';
+import 'swiper/css/navigation';
 
 import BlockqouteNotice from '@/components/blockqoute-notice';
 import PostIntroduction from '@/components/post-introduction';
 import CovidIntroduction from '@/components/covid-introduction';
+import AnnouncementToolbar from '@/components/announcement-toolbar';
 import Announcement from '@/components/announcement';
 import Divider from '@/components/divider';
 import Post from '@/components/post';
@@ -96,14 +104,74 @@ export default function Home() {
           )}
         </WeatherContent>
 
-        <PostIntroduction/>
+
+        {/* posts swiper */}
+        <Swiper
+          navigation
+          pagination
+          spaceBetween={40}
+          slidesPerView={1}
+          modules={[Navigation, Pagination, Autoplay]}
+          className="mySwiper"
+        >
+        <style global jsx>{`
+          .swiper-button-disabled {
+            opacity: 0 !important;
+          }
+          .swiper-button-next, .swiper-button-prev {
+            background-color: white;
+            border-radius: 40px;
+            width: 50px;
+            height: 50px;
+            top: 50px !important;
+          }
+          .swiper-button-next {
+            left: 30px;
+          }
+
+          .swiper-button-prev  {
+            left: -15px;
+          }
+
+
+          .swiper-button-next::after, .swiper-button-prev::after {
+            font-size: 1.5rem;
+          }
+          .swiper-pagination {
+            left: -575px !important;
+            bottom: 40px !important;
+            position: absolute;
+          }
+
+          .swiper-pagination .swiper-pagination-bullet {
+            height: 13px;
+            width: 13px;
+          }
+
+          .mySwiper {
+            position: relative;
+          }
+        `}
+        </style>
+          {[...Array(3)].map(i =>
+            <SwiperSlide key={i}>
+              <PostIntroduction/>
+            </SwiperSlide>
+          )}
+        </Swiper>
+
+        {/* end */}
       </Container>
 
       <BlockqouteNotice/>
 
 
       <Container>
-        <Announcement/>
+        <AnnouncementToolbar>
+          {[...Array(5)].map(i =>
+            <Announcement key={i} />
+          )}
+        </AnnouncementToolbar>
       </Container>
 
       <Container>
@@ -117,7 +185,7 @@ export default function Home() {
 
       <Container>
         {
-          [1,2,3,4,5].map(i =>
+          [...Array(3)].map(i =>
             <Post key={i}/>
           )
         }

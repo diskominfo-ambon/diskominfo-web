@@ -26,7 +26,13 @@ const Posts = styled.ul`
   margin-top: 4rem;
   list-style: none;
 `;
-const PostItem = styled.li``;
+const PostItem = styled.li`
+  border-bottom: 1px dashed #ddd;
+
+  &:last-child {
+    border-bottom: none;
+  }
+`;
 
 export default function Index() {
   return (
@@ -47,9 +53,11 @@ export default function Index() {
         </center>
 
         <Posts>
-          <PostItem>
-            <Post/>
-          </PostItem>
+          {[...Array(5)].map(i =>
+            <PostItem key={i}>
+              <Post />
+            </PostItem>
+          )}
         </Posts>
       </Content>
     </Container>

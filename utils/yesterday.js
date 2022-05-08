@@ -15,17 +15,30 @@ export default function yesterday(limit) {
 
     switch(i) {
       case now.getDate():
-        result = 'Hari ini';
+        result = {
+          date,
+          label: 'Hari ini',
+        };
+
         break;
       case now.getDate() - 1:
-        result = 'Kemarin';
+        result = {
+          date,
+          label: 'Kemarin',
+        };
+
         break;
       default:
-        result = new Intl.DateTimeFormat('id-ID', { dateStyle: 'medium'})
-        .format(date)
-        .split(' ')
-        .slice(0, 2)
-        .join(' ');
+        const label = new Intl.DateTimeFormat('id-ID', { dateStyle: 'medium'})
+          .format(date)
+          .split(' ')
+          .slice(0, 2)
+          .join(' ');
+
+        result = {
+          label,
+          date
+        };
 
         break;
 

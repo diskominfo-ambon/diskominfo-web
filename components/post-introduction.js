@@ -2,15 +2,7 @@ import styled, { keyframes } from 'styled-components';
 import Link from 'next/link';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faUserCheck, faClock, faCircle } from "@fortawesome/free-solid-svg-icons";
-import { Navigation, Pagination, EffectFade, Autoplay } from 'swiper';
-import { Swiper, SwiperSlide } from 'swiper/react';
 import Image from '@/components/image';
-
-import 'swiper/css';
-import 'swiper/css/autoplay';
-import 'swiper/css/effect-fade';
-import 'swiper/css/pagination';
-import 'swiper/css/navigation';
 
 const FlexRow = styled.div`
   display: flex;
@@ -106,93 +98,41 @@ const TagLabel = styled(Caption)`
 
 export default function PostIntroduction() {
   return (
-    <Swiper
-      navigation
-      pagination
-      spaceBetween={40}
-      slidesPerView={1}
-      modules={[Navigation, Pagination, Autoplay]}
-      className="mySwiper"
-    >
-      <style global jsx>{`
-        .swiper-button-disabled {
-          opacity: 0 !important;
-        }
-        .swiper-button-next, .swiper-button-prev {
-          background-color: white;
-          border-radius: 40px;
-          width: 50px;
-          height: 50px;
-          top: 50px !important;
-        }
-        .swiper-button-next {
-          left: 30px;
-        }
+    <FlexRow>
+      <Content>
+        <LiveText>
+          <FontAwesomeIcon icon={faCircle} />
+          TERKINI
+        </LiveText>
+        <Title>Halo ini judul</Title>
+        <>
+          <Caption>
+            <FontAwesomeIcon icon={faUserCheck} />
+            Admin
+          </Caption>
+          <Caption>
+            <FontAwesomeIcon icon={faClock} />
+            12 Januari 2000
+          </Caption>
+          <TagLabel>
+            kominfo
+          </TagLabel>
+        </>
+        <Description>
+          Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industrys standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.
+        </Description>
 
-        .swiper-button-prev  {
-          left: -15px;
-        }
+        <Link href="/i">Baca selengkapnya</Link>
+      </Content>
+      <ImageContent>
+        <Image
+          src="https://images.unsplash.com/photo-1644982652061-df82282e178d?ixlib=rb-1.2.1&ixid=MnwxMjA3fDF8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1740&q=80"
+          alt="cover"
+          height="200"
+          width="300"
+        />
 
-
-        .swiper-button-next::after, .swiper-button-prev::after {
-          font-size: 1.5rem;
-        }
-        .swiper-pagination {
-          left: -575px !important;
-          bottom: 40px !important;
-          position: absolute;
-        }
-
-        .swiper-pagination .swiper-pagination-bullet {
-          height: 13px;
-          width: 13px;
-        }
-
-        .mySwiper {
-          position: relative;
-        }
-      `}
-      </style>
-      {[1,2,3].map(i =>
-        <SwiperSlide key={i}>
-          <FlexRow>
-            <Content>
-              <LiveText>
-                <FontAwesomeIcon icon={faCircle} />
-                TERKINI
-              </LiveText>
-              <Title>Halo ini judul</Title>
-              <>
-                <Caption>
-                  <FontAwesomeIcon icon={faUserCheck} />
-                  Admin
-                </Caption>
-                <Caption>
-                  <FontAwesomeIcon icon={faClock} />
-                  12 Januari 2000
-                </Caption>
-                <TagLabel>
-                  kominfo
-                </TagLabel>
-              </>
-              <Description>
-                Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industrys standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.
-              </Description>
-
-              <Link href="/i">Baca selengkapnya</Link>
-            </Content>
-            <ImageContent>
-              <Image
-                src="https://images.unsplash.com/photo-1644982652061-df82282e178d?ixlib=rb-1.2.1&ixid=MnwxMjA3fDF8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1740&q=80"
-                alt="cover"
-                height="200"
-                width="300"
-              />
-
-            </ImageContent>
-          </FlexRow>
-        </SwiperSlide>
-      )}
-    </Swiper>
+      </ImageContent>
+    </FlexRow>
   );
 }
