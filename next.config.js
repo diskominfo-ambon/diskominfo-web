@@ -10,6 +10,9 @@ const withTM = require("next-transpile-modules")([
 
 const nextConfig = withTM({
   reactStrictMode: true,
+  env: {
+    NEXT_PUBLIC_WEATHERAPI_KEY: process.env.NEXT_PUBLIC_WEATHERAPI_KEY,
+  },
   images: {
     domains: [
       "images.unsplash.com",

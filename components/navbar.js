@@ -139,7 +139,7 @@ export default function Navbar() {
                   { to: '/mengenal-kami/sejarah', text: 'Sejarah'},
                   { to: '', text: 'Struktur organisasi'},
                   { to: '/mengenal-kami/tugas', text: 'Tugas dan fungsi'},
-                  { to: '', text: 'Command Center'},
+                  { to: '/mengenal-kami/command-center', text: 'Command Center'},
                 ]}
               />
             </NavbarItem>

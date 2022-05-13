@@ -47,7 +47,7 @@ export default function BlockqouteNotice() {
   return (
     <LinearGradient>
       <ContainerFlexRow>
-        <Author src="/static/img/gubernur.png" layout="fixed" height="290" width="550" />
+        <Author src="/static/img/diskominfo-dinas.png" layout="fixed" height="290" width="550" />
         <Content>
           <Blockqoute>
             Dengan ini, kami menyatakan sanggup menyelenggarakan pelayanan sesuai standar pelayanan yang telah ditetapkan dan apabila tidak menepati janji ini, kami siap menerima sanksi sesuai peraturan perundangan-undangan yang berlaku.
