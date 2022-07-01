@@ -85,10 +85,10 @@ export default function Agenda() {
       ]} />
       <Modal
         show={show}
-        heading="Judul modal"
+        heading="Kegiatan pemasangan jaringan pada setiap OPD"
         onDismiss={() => setShow(show => !show)}
       >
-        Hello world
+       <Paragraph>Dalam kegiatan pemasangan jaringan pada setiap OPD dari Dinas kominfo</Paragraph>
       </Modal>
 
       <center>
@@ -113,13 +113,13 @@ export default function Agenda() {
         initialEvents={[
           {
             id: 1,
-            title: 'Hello world',
+            title: 'Kegiatan pemasangan jaringan pada setiap OPD',
             start: new Date(),
           },
           {
             id: 2,
-            title: 'Halo dunoa',
-            start: new Date(),
+            title: 'Kegiatan sosialisasi pemasangan jaringan ke OPD',
+            start: new Date('2022-06-27'),
           }
         ]}
         locales={[idLocale]}

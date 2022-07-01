@@ -96,7 +96,7 @@ const TagLabel = styled(Caption)`
   border-color: rgba(0%, 58%, 68%, .25);
 `;
 
-export default function PostIntroduction() {
+export default function PostIntroduction({title, description, date, photoUrl}) {
   return (
     <FlexRow>
       <Content>
@@ -104,7 +104,7 @@ export default function PostIntroduction() {
           <FontAwesomeIcon icon={faCircle} />
           TERKINI
         </LiveText>
-        <Title>Halo ini judul</Title>
+        <Title>{title}</Title>
         <>
           <Caption>
             <FontAwesomeIcon icon={faUserCheck} />
@@ -112,21 +112,21 @@ export default function PostIntroduction() {
           </Caption>
           <Caption>
             <FontAwesomeIcon icon={faClock} />
-            12 Januari 2000
+            {date}
           </Caption>
           <TagLabel>
             kominfo
           </TagLabel>
         </>
         <Description>
-          Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industrys standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.
+          {description}
         </Description>
 
-        <Link href="/i">Baca selengkapnya</Link>
+        <Link href="/informasi/kegiatan/test">Baca selengkapnya</Link>
       </Content>
       <ImageContent>
         <Image
-          src="https://images.unsplash.com/photo-1644982652061-df82282e178d?ixlib=rb-1.2.1&ixid=MnwxMjA3fDF8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1740&q=80"
+          src={photoUrl}
           alt="cover"
           height="200"
           width="300"

@@ -114,6 +114,8 @@ const Paragraph = styled.p`
   font-family: 'Plus Jakarta Sans', sans-serif;
   margin: 0;
   line-height: 28px;
+  margin: 20px 0;
+
 `;
 
 const PostContent = styled.div`
@@ -150,7 +152,7 @@ export default function Kegiatan() {
         <Content>
           <PostHeader>
             <PostTitle>
-            Lorem Ipsum is simply dummy text of the printing and typesetting industry
+            KemenKominfo : Perlu Ada Reviu, Untuk Mencegah Tumpang Tindih Tugas Dan Kewenangan Diskominfo
             </PostTitle>
             <Caption>
               <FontAwesomeIcon icon={faUserCheck} />
@@ -158,10 +160,10 @@ export default function Kegiatan() {
             </Caption>
             <Caption>
               <FontAwesomeIcon icon={faClock} />
-              Kamis 12 januari 2010
+              16 Juni 2022
             </Caption>
             <TagLabel>
-              Halo
+              kominfo
             </TagLabel>
             <InlineShareButtons
               config={{
@@ -181,7 +183,7 @@ export default function Kegiatan() {
           </PostHeader>
 
           <PostCover
-            src="https://images.unsplash.com/photo-1644982652061-df82282e178d?ixlib=rb-1.2.1&ixid=MnwxMjA3fDF8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1740&q=80"
+            src="https://ambon.go.id/wp-content/uploads/2022/06/IMG-20220616-WA0002.jpg"
             alt="cover"
             height="200"
             width="300"
@@ -189,7 +191,47 @@ export default function Kegiatan() {
           />
           <PostContent>
             <Paragraph>
-              Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industrys standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.
+            Jakarta,PPID – Tugas dan kewenangan Dinas Komunikasi dan Informatika (Diskominfo) biasanya sering dijalankan dinas dan badan lain.
+            Bahkan, dinas dan badan terkait tidak ingin menyerahkan tugas dan fungsi ke Diskominfo. Akibatnya, sering terjadi tumpang tindih di daerah.
+            </Paragraph>
+
+            <Paragraph>
+            Hal ini disampaikan Direktur Layanan Aplikasi Informatika Pemerintahan Kementerian Kominfo RI (Kemenkominfo), Bambang Dwi Anggono, ketika melakukan pertemuan antara Diskominfo se-Provinsi Maluku dengan Kementerian Kominfo di ruang rapat B. M. Diah lantai. 6, Gedung Kementerian Kominfo, Medan Merdeka Barat, Jakarta Pusat, Rabu (25/6/2022).
+            </Paragraph>
+            <Paragraph>
+            Pertemuan dimaksud merupakan tindak lanjut hasil Rapat Forum OPD Diskominfo kabupaten/kota di Kabupaten Maluku Tenggara, medio April 2022 lalu.
+
+            ”Jadi memang kami sementara menyusun regulasi terkait dengan tugas Dinas Kominfo. Kami berharap tidak ada tumpang tindih dalam kegiatan. Jadi daerah perlu melakukan harmonisasi sesuai aturan yang di buat pusat,” ingatnya.
+
+            Dirinya mengaku, selama ini antar Kementerian tidak terjadi tumpang tindih, tapi kalau di daerah tidak boleh terjadi. ”Perlu ada reviu di Pemda terkait aturan dan pembagian kewenangan antar OPD agar tidak terjadi tumpang tindih sesuai Peraturan yang dikeluarkan pemerintah pusat,”tandasnya.
+
+            Soal pertemuan KemenKominfo dengan Diskominfo se Maluku, dia mengaku, pertemuan ini merupakan silaturahmi yang baik. “Jadi ini bukan pertemuan pertama. Tapi seringkali kami berkomunikasi dengan teman-teman Kominfo Maluku dan Kominfo Kabupaten/Kota di Maluku,”terangnya.
+
+            Apalagi, lanjutnya, pertemuan yang dilakukan untuk mempererat kerjasama lebih lanjut antara pusat dan daerah lebih khusus terkait program-program Kominfo di pusat dan didaerah.
+            </Paragraph>
+
+            <Paragraph>
+            “Banyak program terkait sarana telekomunikasi untuk memastikan seluruh masyarakat mendapat telekomunikasi yang terbaik. Juga terkait dengan e-goverment yang bisa membantu daerah menjawab tantangan pembiayaan yang terbatas. Sehingga daerah tidak menanggung karena sudah ditanggung Kementerian Kominfo. Kemudian terkait pengalihan Televisi analog ke digital dan juga terkait informatika dan ekonomi digital,”jelasnya.
+
+Tak hanya itu, pertemuan yang digelar juga menjadi sarana untuk sinkronisasi pusat dan daerah agar terjadi kerjasama yang maksimal dan hasilnya bermanfaat bagi masyarakat.
+
+Terkait dukungan Anggaran dari kementerian dalam pelaksanaan tugas dan fungsi Kominfo Provinsi dan kabupaten/kota, Bambang menyatakan bahwa Kementerian Kominfo sementara menyusun anggaran untuk mendukung kegiatan lewat Dana Khusus maupun  dana Dekon dan hal ini sudah menjadi kolaborasi tingkat pusat.
+
+”Jadi Kementerian Kominfo, Kementerian Keuangan, Kemendagri, dan Bapenas serta KemenPAN RB serta pihak-pihak sudah bahas terkait soal skema pembiayaan. Harapanya segera memberikan hasil. Jadi bukan saja pemerintah, tapi pihak legislatif juga,”paparnya
+
+Untuk itu, harapnya, pihaknya memohon dukungan dari Dinas Kominfo seluruh Indonesia, merapatkan barisan untuk satu suara agar dukungan pembiayaan dalam proses transformasi digital didaerah berjalan baik. Transformasi digital bukan saja tanggungjawab pusat tapi juga daerah perlu kita perjuangan bersama-sama,”pungkasnya.
+            </Paragraph>
+
+            <Paragraph>
+            Ditempat yang sama, Kepala Dinas Komunikasi Informatika dan Persandian Kota Ambon, Joy .R. Adriaansz meminta pihak Kemkominfo untuk membantu memudahkan infrastruktur  jaringan/internet di wilayah Provinsi Maluku.
+
+“Seperti yang kita semua ketahui, provinsi Maluku merupakan daerah Kepulauan, yang transportasinya saja sudah sulit. Mohon kiranya lewat Kemkominfo, untuk membantu mempermudah pembangunan infrastruktur jaringan diwilayah Maluku, sehingga blank spot di wilayah Maluku dapat dikurangi,” pinta Kadis.
+
+Kadis mengaku, untuk wilayah Kota Ambon sendiri sudah mendapat bantuan infrastruktur dari BAKTI bekerjasama dengan desa melalui BUMDES dan disertai dengan pelatihan bagi para operator, sehingga desa yang tadinya sulit terjangkau dengan koneksi internet sudah mulai teratasi.
+
+“Untuk Kota Ambon, kita sudah menjalin kerjasama dengan BAKTI, dimana pihak BAKTI membantu infrakstruktur jaringan serta pelatihan yang diperuntukkan bagi operator pada BUMDES dimulai dari pengkabelan sampai setting perangkat jaringan internet, sehingga kedepan ketika ada masalah pada jaringan, sudah bisa diatasi oleh para operator yang ada di desa,” tutupnya. (MCAMBON/DM)
+
+
             </Paragraph>
           </PostContent>
         </Content>
@@ -199,15 +241,22 @@ export default function Kegiatan() {
               Kegiatan lainnya
             </SidebarHeading>
             <SidebarList>
-              { [1,2,3,4,5].map(val =>
-                <SidebarItem key={val}>
-                  <Link href="/h" passHref>Halo</Link>
+
+                <SidebarItem>
+                  <Link href="#" passHref>Klasis GPM Kota Ambon Gelar Talkshow Enterpreneur, Pemkot Beri Apresiasi</Link>
                   <Caption>
                     <FontAwesomeIcon icon={faClock} />
-                    Kamis 12 januari 2010
+                    30 Juni 2022
                   </Caption>
                 </SidebarItem>
-              )}
+                <SidebarItem>
+                  <Link href="#" passHref>Lulus Seleksi Administrasi, 38 Calon Tenaga IT Ikuti Tahapan SKB</Link>
+                  <Caption>
+                    <FontAwesomeIcon icon={faClock} />
+                    6 April 2021
+                  </Caption>
+                </SidebarItem>
+
             </SidebarList>
           </SidebarContent>
         </Sidebar>

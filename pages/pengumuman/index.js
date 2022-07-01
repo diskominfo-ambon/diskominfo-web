@@ -51,9 +51,7 @@ export default function Index() {
         <AnnouncementToolbar>
           <Announcements>
             <AnnouncementItem>
-              {[...Array(5)].map(i =>
-                <Announcement key={i} />
-              )}
+            <Announcement />
             </AnnouncementItem>
           </Announcements>
         </AnnouncementToolbar>

@@ -136,10 +136,12 @@ export default function Navbar() {
               <LinkDropdown
                 text="Mengenal kami"
                 menus={[
-                  { to: '/mengenal-kami/sejarah', text: 'Sejarah'},
-                  { to: '', text: 'Struktur organisasi'},
+                  // { to: '/mengenal-kami/sejarah', text: 'Sejarah'},
+                  { to: '/mengenal-kamui/organisasi', text: 'Tentang'},
                   { to: '/mengenal-kami/tugas', text: 'Tugas dan fungsi'},
                   { to: '/mengenal-kami/command-center', text: 'Command Center'},
+                  { to: '/mengenal-kami/e-lapor', text: 'SOP E-Lapor'},
+                  { to: '/mengenal-kami/sop-layanan', text: 'SOP pengaduan layanan'},
                 ]}
               />
             </NavbarItem>
@@ -160,8 +162,6 @@ export default function Navbar() {
                 text="Layanan"
                 menus={[
                   { blank: true, to: 'http://www.lapor.go.id', text: 'E-Lapor - Layanan lapor pengaduan masyarakat'},
-                  { blank: true, to: 'http://lpse.ambon.go.id/eproc4', text: 'LPSE - Pengadaan Barang atau Jasa secara elektronik'},
-                  { blank: true, to: 'http://simdatik.ambon.go.id/dataset/home', text: 'SIMDATIK - Sistem informasi data statistik'},
                   { blank: true, to: 'https://ambonaccess.id', text: 'Ambon Access'},
                   { blank: true, to: 'http://dpmptsp.ambon.go.id', text: 'DPMPTSP - Dinas Penanaman Modal dan Pelayanan Terpadu Satu Pintu'},
                   { blank: true, to: '#', text: 'SIMAK - Sistem Informasi Manajemen Administrasi Kependudukan'},

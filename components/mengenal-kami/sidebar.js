@@ -72,17 +72,23 @@ export default function Sidebar() {
       </SidebarTitle>
 
       <SidebarContent>
-        <SidebarItem active={/sejarah/.test(router.pathname)}>
+        {/* <SidebarItem active={/sejarah/.test(router.pathname)}>
           <Link href="/mengenal-kami/sejarah" passHref>Sejarah</Link>
-        </SidebarItem>
-        <SidebarItem>
-          <Link href="/" passHref>Struktur organisasi</Link>
+        </SidebarItem> */}
+        <SidebarItem active={/organisasi/.test(router.pathname)}>
+          <Link href="/mengenal-kami/organisasi" passHref>Tentang</Link>
         </SidebarItem>
         <SidebarItem active={/tugas/.test(router.pathname)}>
           <Link href="/mengenal-kami/tugas" passHref>Tugas dan fungsi</Link>
         </SidebarItem>
         <SidebarItem active={/command-center/.test(router.pathname)}>
           <Link href="/mengenal-kami/command-center" passHref>Command Center</Link>
+        </SidebarItem>
+        <SidebarItem active={/e-lapor/.test(router.pathname)}>
+          <Link href="/mengenal-kami/e-lapor" passHref>SOP E-Lapor</Link>
+        </SidebarItem>
+        <SidebarItem active={/sop-layanan/.test(router.pathname)}>
+          <Link href="/mengenal-kami/sop-layanan" passHref>SOP pengaduan layanan</Link>
         </SidebarItem>
       </SidebarContent>
     </SidebarCollapse>

@@ -34,7 +34,7 @@ export default function CommandCenter() {
     <Layout breadcrumb="Command Center">
       <Content>
         <Heading>
-         Informasi Command Center pemerintah kota Ambon
+        Command Center pemerintah kota Ambon
         </Heading>
         <Iframe
           src='https://www.youtube.com/embed/-Y2o8VmBlVA?autoplay=1&mute=1'
@@ -43,17 +43,10 @@ export default function CommandCenter() {
           allowFullScreen
           title='Command center introduction'
         />
-        <Paragraph>
-          Ambon, PPID – Walikota Ambon, Richard Louhenapessy, pada momentum Upacara Peringatan HUT Ke- 446 Kota Ambon 7 September 2021 lalu, di Lapangan Merdeka telah meresmikan Command Center Pemerintah Kota (Pemkot) Ambon.
-        </Paragraph>
-        <Blackqoute>
-          Sebenarnya apa fungsi dari Command Center yang dikelola oleh Dinas Komunikasi Informatika dan Persandian Kota Ambon tersebut?
-        </Blackqoute>
-
-        <Paragraph>
-          Command Center merupakan pusat visualisasi dan integrasi data Kota Ambon yang dilengkapi dengan berbagai infrastruktur untuk kegiatan monitoring, koordinasi & pengambilan keputusan. Command Center bertempat di kawasan Jl. Sultan Hairun No. 1 Gd. C Lt. 4 kantor Balai kota Ambon Gedung A.
-        </Paragraph>
-
+        <Heading>
+          SOP Kunjungan & Permintaan Data Command Center pemerintah kota Ambon
+        </Heading>
+        <Iframe src="https://docs.google.com/spreadsheets/d/e/2PACX-1vQi-87CG5T7WSXgBXUka-wdDqJrrmij5wjPl2h22ysIhXH47i4EbEWRgi262xWlY4Xd6zcvV3Q94s2h/pubhtml?widget=true&amp;headers=false"></Iframe>
 
 
       </Content>

@@ -88,7 +88,7 @@ export default function Announcement() {
       <Content>
         <Header>
           <Title>
-            Pengumuman
+          Pengumuman Seleksi Pengadaan Pegawai Kontrak dalam Jabatan Pranata Komputer Pemerintah Kota Ambon Tahun Anggaran 2021
           </Title>
           <Captions>
             <Caption>
@@ -97,10 +97,10 @@ export default function Announcement() {
             </Caption>
             <Caption>
               <FontAwesomeIcon icon={faClock} />
-              Kamis 12 januari 2010
+              Maret 2021
             </Caption>
             <TagLabel>
-              Halo
+              kominfo
             </TagLabel>
           </Captions>
           <InlineShareButtons
@@ -122,11 +122,11 @@ export default function Announcement() {
         </Header>
 
         <Paragraph>
-          Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industrys standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.
+        Dalam rangka upaya peningkatkan pelayanan di Kota Ambon, maka bersama ini diberitahukan bahwa Pemerintah Kota Ambon akan melaksanakan Seleksi Pengadaan Pegawai Kontrak Dalam Jabatan Pranata Komputer yang akan di tempatkan pada Dinas Komunikasi, Informatika dan Persandian Kota Ambon Tahun Anggaran 2021.
         </Paragraph>
 
         <Iframe
-          src={'/static/bumn.pdf'}
+          src="https://www.ambon.go.id/wp-content/uploads/2020/03/SELEKSI%20PEGAWAI%20KONTRAK%20JABATAN%20PRANATA%20KOMPUTER.pdf"
           frameBorder="0"
           marginHeight="0"
           marginWidth="0"
