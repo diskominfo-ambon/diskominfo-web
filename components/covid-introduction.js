@@ -175,7 +175,7 @@ export default function CovidIntroduction() {
       `}
       </style>
 
-      <Title>Informasi Covid-19</Title>
+      <Title>Informasi Covid-19 kota Ambon</Title>
       <FlexRow>
         <Content>
           <Heading>Kenali Informasi Seputar Covid-19</Heading>

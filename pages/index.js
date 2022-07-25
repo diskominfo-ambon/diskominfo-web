@@ -21,6 +21,7 @@ import Post from '@/components/post';
 import Container from '@/components/container';
 import useWeather from '@/utils/weather';
 import weatherConditionId from '@/lang/weather-condition-id';
+import Blockqoute from '@/components/blockqoute';
 
 
 const title = 'Pemerintah Kota Ambon &#8211; Laman resmi Dinas komunikasi, informatika dan persandian kota Ambon';
@@ -28,6 +29,7 @@ const title = 'Pemerintah Kota Ambon &#8211; Laman resmi Dinas komunikasi, infor
 const WeatherContent = styled.div`
   display: flex;
   margin-top: 1.5rem;
+  margin-bottom: 20px;
 `;
 const WeatherIcon = styled(Image)`
   margin-right: .5rem;
@@ -62,6 +64,53 @@ const WeatherText = styled.p`
   }
 `;
 
+const CoverImage = styled(Image)`
+  border-radius: 7px;
+  width: 100%;
+  margin: 10px 0;
+  object-fit: cover;
+`;
+
+const List = styled.ul`
+  list-style: numeric;
+  // padding: 0;
+`;
+const ListItem = styled.li`
+  color: white;
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  margin-bottom: 1.2rem;
+
+  &:last-child {
+    margin-bottom: 0;
+  }
+`;
+
+const BlockqouteContentText = styled.p`
+  line-height: 28px;
+  color: white;
+`;
+
+const BlockqouteItem = styled.div`
+  margin-bottom: 3rem;
+  &:last-child {
+    margin-bottom: 0;
+  }
+`;
+
+
+const polices = [
+  'Konsolidasi Internal Birokrasi',
+  'Penataan Manajemen Pengelolaan Keuangan dan Aset Daerah',
+  'Identifikasi Data & Penyelesaian Hutang',
+  'Sinkronisasi Program Penurunan Angka Kemiskinan',
+  'Peningkatan Pendapatan Asli Daerah (PAD)',
+  'Peningkatan Kualitas Pelayanan Publik',
+  'Peningkatan Layanan Perizinan dan Non Perizinan yang Terintegrasi',
+  'Penyelarasan Arah Kebijakan Pembangunan Kota Ambon dengan Pemerintah Pusat dan Provinsi Maluku',
+  'Perwujudan Ambon Bersih',
+  'Fasilitas Pemilihan Walikota dan Wakil Walikota Ambon Tahun 2024 serta Menjaga Netralitas ASN',
+  'Mendukung Kebijakan Pemerintah Pusat dan Provinsi Maluku dalam Penanganan Pandemi Covid-19',
+];
 
 
 export default function Home() {
@@ -103,6 +152,9 @@ export default function Home() {
             </>
           )}
         </WeatherContent>
+
+        <CoverImage src="/static/img/cover.jpg" alt="cover homepage" layout="responsive" height="190" width="500" />
+        
 
 
         {/* posts swiper */}
@@ -163,20 +215,53 @@ export default function Home() {
         {/* end */}
       </Container>
 
-      <BlockqouteNotice/>
 
+      <Blockqoute>
+        <BlockqouteItem>
+          <Blockqoute.Heading>
+            11 Kebijakan Prioritas Pemerintah kota Ambon
+          </Blockqoute.Heading>
+          <Blockqoute.Content>
+            <List>
+            {polices.map((item, i) => 
+              <ListItem key={i}>{item}</ListItem>
+            )}
+            </List>
+          </Blockqoute.Content>
+          <Blockqoute.Caption>
+            Drs. BODEWIN M. WATTIMENA, M.Si - PEJABAT WALIKOTA AMBON
+          </Blockqoute.Caption>
+        </BlockqouteItem>
+        <BlockqouteItem>
+          <Blockqoute.Heading>
+            Makmulat Pelayanan
+          </Blockqoute.Heading>
+          <Blockqoute.Content>
+            <BlockqouteContentText>
+            Dengan ini, kami menyatakan sanggup menyelenggarakan pelayanan sesuai standar pelayanan yang telah ditetapkan dan apabila tidak menepati janji ini, kami siap menerima sanksi sesuai peraturan perundangan-undangan yang berlaku.
+            </BlockqouteContentText>
+          </Blockqoute.Content>
+          <Blockqoute.Caption>
+            Drs. J. R. ADRIAANSZ, M.Si - KEPALA DINAS KOMUNIKASI INFORMATIKA & PERSANDIAN KOTA AMBON
+          </Blockqoute.Caption>
+        </BlockqouteItem>
+      </Blockqoute>
+
+
+      <br/>
+      <br/>
+      <Container>
+        <CovidIntroduction/>
+      </Container>
 
       <Container>
         <AnnouncementToolbar>
-          {[...Array(5)].map(i =>
+          {[...Array(3)].map(i =>
             <Announcement key={i} />
           )}
         </AnnouncementToolbar>
       </Container>
 
-      <Container>
-        <CovidIntroduction/>
-      </Container>
 
       <Divider
         title="Informasi kegiatan lainnya"

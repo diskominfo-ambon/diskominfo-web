@@ -5,12 +5,10 @@ import { faCircleInfo, faClock, faUserCheck } from '@fortawesome/free-solid-svg-
 
 
 const Layout = styled.div`
-  padding: 2rem 0;
-  border-bottom: 1px solid #ddd;
-
-  &:last-child {
-    border-bottom: none;
-  }
+  padding: 2rem;
+  border: 1px solid #ddd;
+  margin-bottom: .9rem;
+  border-radius: 5px;
 `;
 const Heading = styled.h3`
   font-family: 'Plus Jakarta Sans', sans-serif;
