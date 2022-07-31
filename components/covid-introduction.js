@@ -33,7 +33,10 @@ const Content = styled.div`
 `;
 
 const Heading = styled.h2`
+  margin: 0;
   margin-bottom: .6rem;
+  color: var(--primary);
+  margin-bottom: 2rem;
   font-family: 'Plus Jakarta Sans', sans-serif;
 `;
 
@@ -172,10 +175,11 @@ export default function CovidIntroduction() {
       `}
       </style>
 
-      <Title>Informasi Covid-19 kota Ambon</Title>
+
       <FlexRow>
         <Content>
           <Heading>Kenali Informasi Seputar Covid-19</Heading>
+          {/* <Title>Informasi Covid-19 kota Ambon</Title> */}
           <SubHeading>
             Ketahui penyakit yang disebabkan oleh Coronavirus, gejala, serta penularan Covid-19.
             Dapatkan informasi soal tindakan yang harus dilakukan jika tertular Covid-19, juga tren

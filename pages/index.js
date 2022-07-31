@@ -11,7 +11,6 @@ import 'swiper/css/effect-fade';
 import 'swiper/css/pagination';
 import 'swiper/css/navigation';
 
-import PostIntroduction from '@/components/post-introduction';
 import CovidIntroduction from '@/components/covid-introduction';
 import AnnouncementToolbar from '@/components/announcement-toolbar';
 import Announcement from '@/components/announcement';
@@ -22,6 +21,7 @@ import useWeather from '@/utils/weather';
 import weatherConditionId from '@/lang/weather-condition-id';
 import Blockqoute from '@/components/blockqoute';
 import Collapse from '@/components/collapse';
+import NewsInfographic from '@/components/news-infographic';
 
 
 const title = 'Pemerintah Kota Ambon &#8211; Laman resmi Dinas komunikasi, informatika dan persandian kota Ambon';
@@ -320,8 +320,18 @@ export default function Home() {
 
       <br/>
       <br/>
+      <br/>
+      <br/>
+      <br/>
+      <br/>
+      <br/>
 
       <CovidIntroduction/>
+
+      <br/>
+      <br/>
+
+      <NewsInfographic/>
 
       <Container>
         <AnnouncementToolbar>
