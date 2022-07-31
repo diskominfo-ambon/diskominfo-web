@@ -5,13 +5,16 @@ import Container from './container';
 import { faSearch } from '@fortawesome/free-solid-svg-icons';
 import LinkDropdown from './link-dropdown';
 import { useRouter } from 'next/router';
+import Image from 'next/image';
 
 const ContainerFlexRow = styled(Container)`
   display: flex;
   justify-content: space-between;
 `;
 const Header = styled.header`
-  border-bottom: 1px solid #ddd;
+  // border-bottom: 1px solid #ddd;
+  padding: 1rem 0;
+  background-color: var(--primary);
 `;
 const FormGroup = styled.div`
   border: 1px solid #ddd;
@@ -23,6 +26,8 @@ const FormGroup = styled.div`
 `;
 const Content = styled.div`
   flex: 1.5;
+  display: flex;
+  align-items: center;
 `;
 const Input = styled.input`
   width: 100%;
@@ -51,61 +56,66 @@ const Submit = styled.button`
 `;
 
 
-const NavbarBrand = styled.h1`
-  font-family: 'Plus Jakarta Sans', sans-serif;
-  font-size: 1.5rem;
-  font-weight: 700;
-  color: var(--primary);
+const NavbarBrand = styled(Image)`
   margin: 0;
-  margin-top: 1rem;
+  display: block;
+  filter: saturate(0) brightness(100);
 `;
 const NavbarCollapse = styled.ul`
   list-style: none;
   padding: 0;
   margin: 0;
+  margin-left: 2rem;
 `;
 const NavbarItem = styled.li`
   display: inline-block;
   font-family: 'Plus Jakarta Sans', sans-serif;
-  padding: .7rem .9rem;
+  // padding: .7rem ;
   font-size: .9rem;
 
 
   &:first-child {
-    padding: .7rem .9rem .7rem 0;
+    // padding: .7rem .9rem .7rem 0;
   }
 
   > a {
     text-decoration: none;
     position: relative;
+    color: white;
+    padding: .6rem 1rem;
+    border-radius: 4px;
+
+    svg  path {
+      fill: white;
+    }
 
     ${
       props => props.active && `
-        color: #0564A6;
-
-        &::before {
-          content: '';
-          display: block;
-          position: absolute;
-          width: 100%;
-          height: 3px;
-          background-color: #0564A6;
-          top: 1.75rem;
-        }
+        color: white;
+        background-color: dodgerblue;
+        // &::before {
+        //   content: '';
+        //   display: block;
+        //   position: absolute;
+        //   width: 100%;
+        //   height: 3px;
+        //   background-color: white;
+        //   top: 1.75rem;
+        // }
       `
     }
 
   }
 
   &::after {
-    content: '';
-    display: inline-block;
-    height: 20px;
-    width: 1px;
-    background-color: #ddd;
-    position: relative;
-    left: 12px;
-    top: 4px;
+    // content: '';
+    // display: inline-block;
+    // height: 20px;
+    // width: 1px;
+    // background-color: #ddd;
+    // position: relative;
+    // left: 12px;
+    // top: 4px;
   }
 
   &:last-child::after {
@@ -121,9 +131,7 @@ export default function Navbar() {
     <Header>
       <ContainerFlexRow>
         <Content>
-          <NavbarBrand>
-            DISKOMINFO KOTA AMBON
-          </NavbarBrand>
+          <NavbarBrand src="/static/img/kominfo.png" height={40} width={40} alt="logo kominfo"/>
           <NavbarCollapse>
             <NavbarItem active={router.pathname === '/'}>
               <Link href="/" passHref>
@@ -148,7 +156,7 @@ export default function Navbar() {
             </NavbarItem>
             <NavbarItem active={/informasi/.test(router.pathname)}>
               <LinkDropdown
-                text="Informasi"
+                text="Kegiatan & Informasi"
                 menus={[
                   { to: '/informasi/kegiatan', text: 'Kegiatan' },
                   { to: '/informasi/agenda', text: 'Informasi agenda' }
@@ -170,12 +178,6 @@ export default function Navbar() {
             </NavbarItem>
           </NavbarCollapse>
         </Content>
-        <FormGroup>
-          <Input placeholder="Telusuri informasi kegiatan..." type="search" autoComplete="off" autoFocus />
-          <Submit>
-            <FontAwesomeIcon icon={faSearch} />
-          </Submit>
-        </FormGroup>
       </ContainerFlexRow>
     </Header>
   );

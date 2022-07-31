@@ -4,7 +4,7 @@ import Image from 'next/image';
 
 const LinearGradient = styled.div`
   padding: 4rem 2rem;
-  background: linear-gradient(150deg, royalblue, var(--primary));
+  background: linear-gradient(180deg, royalblue 250px, white);
 `;
 
 const Content = styled.div`
@@ -36,7 +36,7 @@ export default function Blockqoute(props) {
       </Container>
     </LinearGradient>
   );
-} 
+}
 
 
 const BlockqouteCaption = (props) => {

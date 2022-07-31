@@ -2,7 +2,7 @@ import { useState, useEffect } from 'react';
 import Link from 'next/link';
 import styled from 'styled-components';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faAngleDown } from '@fortawesome/free-solid-svg-icons';
+import { faAngleDown, faCaretDown } from '@fortawesome/free-solid-svg-icons';
 import Container from './container';
 import { CSSTransition } from 'react-transition-group';
 import PropTypes from 'prop-types';
@@ -21,21 +21,24 @@ const DropdownText = styled.a`
 
 
 const DropdownCollapse = styled.div`
-  background-color: white;
+  // background-color: white;
   display: block;
   width: 100%;
   position: absolute;
   left: 0;
-  z-index: 10;
-  top: 5.825rem;
+  z-index: 100;
+  top: 4.5rem;
   right: 0;
-  border-bottom: 1px solid #ddd;
+  // border-bottom: 1px solid #ddd;
 `;
 
 const DropdownMenu = styled.ul`
   list-style: none;
   margin: 0;
   padding: 0;
+  background-color: white;
+  border-radius: 5px;
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
 `;
 
 const DropdownItem = styled.li`
@@ -48,7 +51,7 @@ const DropdownItem = styled.li`
   }
 
   > a {
-    padding: 1rem 0;
+    padding: 1rem;
     display: block;
     text-decoration: none;
 
@@ -147,7 +150,7 @@ export default function LinkDropdown(props) {
       </style>
       <DropdownText onClick={() => setVisible(visible => !visible)}>
         {text}
-        <ArrowDownIcon rotate={visible} icon={faAngleDown} />
+        <ArrowDownIcon rotate={visible} icon={faCaretDown} />
       </DropdownText>
 
       <CSSTransition

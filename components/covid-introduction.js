@@ -3,23 +3,17 @@ import styled from 'styled-components';
 import Link from 'next/link';
 import axios from 'axios';
 import Skeleton from 'react-loading-skeleton';
+import Container from './container';
+import Image from 'next/image';
 import 'react-loading-skeleton/dist/skeleton.css'
+
 
 const Title = styled.h2`
   font-family: 'Plus Jakarta Sans', sans-serif;
   color: var(--primary);
   font-weight: 600;
   display: inline-block;
-
-  &::after {
-    content: '';
-    display: block;
-    background: url('/static/img/underline.svg');
-    background-repeat: no-repeat;
-    background-size: 100%;
-    height: 10px;
-    margin-top: .3rem;
-  }
+  margin-bottom: 3rem;
 `;
 
 const FlexRow = styled.div`
@@ -52,13 +46,17 @@ const SubHeading = styled.p`
 
 const Card = styled.div`
   border-radius: 6px;
-  border: 1px solid #ddd;
+  border: 1px solid ${props => props.color || '#ddd'};
   padding: 1rem;
   display: inline-block;
   height: 200px;
   width: 200px;
   position: relative;
   margin-right: 1rem;
+
+  > h3 {
+    color: ${props => props.color};
+  }
 
   &:last-child {
     margin: 0;
@@ -68,7 +66,6 @@ const CardLabel = styled.h3`
   margin: 0;
   font-family: 'Plus Jakarta Sans', sans-serif;
   font-size: .9rem;
-  color: ${props => props.color};
 `;
 const CardParagraph = styled.p`
   font-family: 'Plus Jakarta Sans', sans-serif;
@@ -120,8 +117,8 @@ function CovidCard(props) {
   const { label, value, variant } = props;
 
   return (
-    <Card>
-      <CardLabel color={variant}>{label}</CardLabel>
+    <Card color={variant}>
+      <CardLabel>{label}</CardLabel>
       <CardBody>
         <CardParagraph>Ambon, Maluku</CardParagraph>
         <CardValue><strong>{value}</strong></CardValue>
@@ -166,7 +163,7 @@ export default function CovidIntroduction() {
 
 
   return (
-    <>
+    <Container>
       <style global jsx>{`
         .react-loading-skeleton {
           margin-right: .6rem;
@@ -218,13 +215,13 @@ export default function CovidIntroduction() {
                 />
               </div>
               <TextUpdate>
-                Update Terakhir: {lastUpdatedLabel}
+                Update Terakhir {lastUpdatedLabel}
               </TextUpdate>
             </>
           )}
 
         </Content>
       </FlexRow>
-    </>
+    </Container>
   );
 }

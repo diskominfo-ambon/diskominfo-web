@@ -7,7 +7,7 @@ import "@fortawesome/fontawesome-svg-core/styles.css";
 
 const GlobalStyle = createGlobalStyle`
   :root {
-    --primary: #0A4B78;
+    --primary: royalblue;
     --second: #0664A6;
     --dark: #3C3C3C;
     --light: #7C7C7C;

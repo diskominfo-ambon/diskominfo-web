@@ -61,11 +61,15 @@ const Caption = styled.span`
   font-size: .8rem;
   font-weight: 400;
   font-family: 'Plus Jakarta Sans', sans-serif;
+  color: royalblue;
 
 
   > svg  {
     margin-right: .3rem;
     display: inline-block;
+    > path {
+      color: royalblue;
+    }
   }
 `;
 
@@ -98,9 +102,6 @@ export default function Post() {
             <FontAwesomeIcon icon={faClock} />
             12 Januari 2000
           </Caption>
-          <TagLabel>
-            kominfo
-          </TagLabel>
         </>
         <Description>
           Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industrys standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.

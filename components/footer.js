@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 import Container from './container';
-
+import Image from 'next/image';
 
 const contacts = [
   {
@@ -21,20 +21,13 @@ const contacts = [
 ];
 
 const Layout = styled.footer`
-  border-top: 1px solid #ddd;
-  padding: 2rem 0;
+  padding-bottom: 2rem;
 `;
 
-const ContainerFlexRow = styled(Container)`
+const FlexRow = styled(Container)`
   display: flex;
-
-  > div {
-    flex: 1;
-
-    &:first-child {
-      flex: 2;
-    }
-  }
+  align-items: center;
+  padding: .7rem 0;
 
   @media screen and (max-width: ${({theme}) => theme.size.medium}) {
     display: block;
@@ -42,119 +35,79 @@ const ContainerFlexRow = styled(Container)`
   }
 `;
 
-const Heading = styled.h3`
-  font-family: 'Plus Jakarta Sans', sans-serif;
-`;
-
-const Title = styled.h2`
-  font-size: 1.8rem;
-  margin-bottom: .8rem;
-  color: var(--primary);
-  font-family: 'Plus Jakarta Sans', sans-serif;
-
-  @media screen and (max-width: ${({theme}) => theme.size.medium}) {
-    font-size: 1.4rem;
-  }
-
-`;
-const Subtitle = styled.p`
+const Paragraph = styled.p`
   margin: 0;
+  padding: 0;
   font-family: 'Plus Jakarta Sans', sans-serif;
-  font-size: .9rem;
-  font-weight: 400;
-  margin-bottom: .5rem;
-
+  font-weight: 500;
+  font-size: .8rem;
+  color: gray;
 `;
-const ListGroup = styled.ul`
+const List = styled.ul`
   padding: 0;
   margin: 0;
   list-style: none;
+  display: flex;
+  align-items: center;
 `;
 
 const ListItem = styled.li`
-  margin-bottom: .5rem;
   font-size: .9rem;
   font-family: 'Plus Jakarta Sans', sans-serif;
   font-weight: 400;
+  margin-right: .7rem;
 
-  > a {
-    text-decoration: none;
-    color: var(--dark);
-    line-height: 24px;
-
-    &:hover {
-      color: var(--primary);
-      text-decoration: underline;
-    }
-
-    > span {
-      margin-left: .3rem;
-    }
+  &:last-child {
+    margin-right: 0;
   }
 `;
 
+const BrandImage = styled(Image)`
+  filter: saturate(0);
+  display: block;
+`;
 
-
-function Contact() {
-  return (
-    <div>
-      <Heading>Kontak</Heading>
-      <ListGroup>
-        { contacts.map(contact =>
-          <ListItem key={contact.key}>
-            <a target="__blank" href={contact.source}>
-              {contact.title}
-            </a>
-          </ListItem>
-        )}
-      </ListGroup>
-    </div>
-  )
-}
-
-function Supported() {
-  return (
-    <div>
-      <Heading>Dukungan</Heading>
-      <ListGroup>
-        <ListItem>
-          <a target="__blank" href="https://ambon.go.id">
-            Laman pemerintah kota Ambon
-            <span>
-              (https://ambon.go.id)
-            </span>
-          </a>
-        </ListItem>
-        <ListItem>
-          <a href="https://malukuprov.go.id" target="__blank">
-            Pemerintah provinsi Maluku
-            <span>
-              (https://malukuprov.go.id)
-            </span>
-          </a>
-        </ListItem>
-      </ListGroup>
-    </div>
-  );
-}
-
+const FooterBrand = styled.div`
+  flex: 1;
+`;
+const FooterSupported = styled.div``;
 
 export default function Footer() {
   return (
     <Layout>
-      <ContainerFlexRow>
-        <div>
-          <Title>Hubungi kami</Title>
-          <Subtitle>
-            Dinas Komunikasi, Informatika & Persandian kota Ambon &copy; 2022
-          </Subtitle>
-          <Subtitle>
-            <strong>Jl. Sultan Hairun No. 1 Gd. C Lt. 4 kantor Balai kota Ambon</strong>
-          </Subtitle>
-        </div>
-        <Supported/>
-        <Contact/>
-      </ContainerFlexRow>
+      <style global jsx>{`
+          hr {
+            height: 1px;
+            background-color: #ddd;
+            border: none;
+            display: block;
+            margin-bottom: 1rem;
+          }
+        `
+      }
+      </style>
+      <Container>
+        <FlexRow>
+          <FooterBrand>
+            <List>
+              <ListItem><BrandImage width="35" height="35" src="/static/img/kominfo.png" alt="kominfo" layout="fixed"/></ListItem>
+              <ListItem><Paragraph>Jl. Sultan Hairun No. 1 Gd. C Lt. 4 kantor Balai kota Ambon</Paragraph></ListItem>
+            </List>
+          </FooterBrand>
+          <FooterSupported>
+            <List>
+              <ListItem><BrandImage width="35" height="35" src="/static/img/ambon.png" alt="kominfo" layout="fixed"/></ListItem>
+              <ListItem><BrandImage width="35" height="35" src="/static/img/prov.png" alt="kominfo" layout="fixed"/></ListItem>
+            </List>
+          </FooterSupported>
+        </FlexRow>
+        <hr/>
+        <List>
+          <ListItem><Image src="/static/img/facebook.webp" width="20" height="20" layout="fixed" alt="fb"/></ListItem>
+          <ListItem><Image src="/static/img/instagram.webp" width="20" height="20" layout="fixed" alt="instagram"/></ListItem>
+          <ListItem><Paragraph>Copyright 2020 Dinas Komunikasi, Informatika dan Persandian kota Ambon. All rights reserved.</Paragraph></ListItem>
+        </List>
+      </Container>
     </Layout>
   );
 }
