@@ -45,6 +45,7 @@ const SubHeading = styled.p`
   margin: 0;
   line-height: 27px;
   font-size: .9rem;
+  text-align: justify;
 `;
 
 const Card = styled.div`

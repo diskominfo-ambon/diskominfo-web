@@ -1,6 +1,7 @@
 import Head from 'next/head';
-import styled from 'styled-components'
-import Skeleton from 'react-loading-skeleton'
+import Link from 'next/link';
+import styled from 'styled-components';
+import Skeleton from 'react-loading-skeleton';
 import 'react-loading-skeleton/dist/skeleton.css'
 import { Navigation, Pagination, EffectFade, Autoplay } from 'swiper';
 import { Swiper, SwiperSlide } from 'swiper/react';
@@ -10,6 +11,10 @@ import 'swiper/css/autoplay';
 import 'swiper/css/effect-fade';
 import 'swiper/css/pagination';
 import 'swiper/css/navigation';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faClock } from "@fortawesome/free-solid-svg-icons";
+
+import axios from 'axios';
 
 import CovidIntroduction from '@/components/covid-introduction';
 import AnnouncementToolbar from '@/components/announcement-toolbar';
@@ -22,6 +27,7 @@ import weatherConditionId from '@/lang/weather-condition-id';
 import Blockqoute from '@/components/blockqoute';
 import Collapse from '@/components/collapse';
 import NewsInfographic from '@/components/news-infographic';
+import PostCard from '@/components/post-card';
 
 
 const title = 'Pemerintah Kota Ambon &#8211; Laman resmi Dinas komunikasi, informatika dan persandian kota Ambon';
@@ -126,6 +132,7 @@ const HeadlineLink = styled.a`
   border-radius: 3px;
   font-weight: 500;
   margin-top: 1rem;
+  text-decoration: none;
   display: inline-block;
 
   &:hover {
@@ -196,6 +203,94 @@ const CollapseArea = styled.div`
 `;
 
 
+const Section = styled.section`
+  background-color: #1A1A1A;
+  margin-top: 7rem;
+  padding: 5rem 0;
+`;
+
+const SectionHeading = styled.h2`
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  color: white;
+  margin: 0;
+  padding: 0;
+`;
+
+const SectionSubHeading = styled.p`
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  color: white;
+  font-size: .9rem;
+  padding: 0;
+  margin: 0;
+  margin-top: .6rem;
+`;
+
+const SectionFlex = styled.div`
+  display: flex;
+  margin-top: 3rem;
+`;
+
+const SectionContent = styled.div`
+  flex: 2;
+
+  &:last-child {
+    flex: 1;
+    margin-left: 1.25rem;
+  }
+`;
+
+const SectionTitle = styled(SectionHeading)`
+  font-size: 1rem;
+`;
+
+const SectionGrid = styled.div`
+  display: grid;
+  margin-top: 1rem;
+  grid-gap: 1.25rem;
+  grid-template-columns: 1fr 1fr;
+`;
+
+
+const AnnouncementContent = styled.ul`
+  background-color: white;
+  border-radius: 3px;
+  margin: 0;
+  padding: 0;
+  margin-top: 1rem;
+  list-style: none;
+`;
+
+
+const AnnouncementItem = styled.li`
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  padding: 1rem;
+  border-bottom: 1px dashed #ddd;
+
+  &:last-child {
+    border-width: 0;
+  }
+`;
+
+const AnnouncementLink = styled(Link)``;
+
+const AnnouncementTitle = styled.p`
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  line-height: 26px;
+  font-size: .9rem;
+  margin: 0;
+  font-weight: 600;
+`;
+const AnnouncementCreatedAtInfo = styled.p`
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  margin: 0;
+  font-size: .7rem;
+  margin-top: .7rem;
+
+  svg {
+    margin-right: .2rem;
+  }
+`;
+
 
 const polices = [
   'Konsolidasi Internal Birokrasi',
@@ -211,11 +306,34 @@ const polices = [
   'Mendukung Kebijakan Pemerintah Pusat dan Provinsi Maluku dalam Penanganan Pandemi Covid-19',
 ];
 
+export async function getServerSideProps() {
 
-export default function Home() {
+  // Fetch data from external API
+  let posts = {}; // news
+  let announcements = {};
+
+
+  const resp = await Promise.all([
+    axios.get("/posts"),
+    axios.get("/announcements"),
+  ]);
+
+  posts = resp[0].data;
+  announcements = resp[1].data;
+
+  return {
+    props: {
+      posts,
+      announcements
+    }, // will be passed to the page component as props
+  }
+}
+
+
+export default function Home(props) {
 
   const [{ location, current }, loading] = useWeather();
-
+  console.log({props});
   return (
     <>
       <style global jsx>{`
@@ -273,7 +391,7 @@ export default function Home() {
               <Headline>Make Ambon Healthy, Safe, and Productive</Headline>
               <SubHeadline><BlockTagHealdine>#kenaldulu</BlockTagHealdine> bersama Dinas Komunikasi, Informatika dan Persandian kota Ambon wujudkan Teknologi untuk semua.</SubHeadline>
               <center>
-                <HeadlineLink>
+                <HeadlineLink passHref href="/mengenal-kami/tentang">
                   Mulai kenalan dulu
                   <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
                     <path strokeLinecap="round" strokeLinejoin="round" d="M13 5l7 7-7 7M5 5l7 7-7 7" />
@@ -333,27 +451,47 @@ export default function Home() {
 
       <NewsInfographic/>
 
-      <Container>
-        <AnnouncementToolbar>
-          {[...Array(3)].map(i =>
-            <Announcement key={i} />
-          )}
-        </AnnouncementToolbar>
-      </Container>
 
+      {/* Kegiatan & Pengumuman terbaru */}
+      <Section>
+        <Container>
+          <SectionHeading>Temukan informasi terbaru kami</SectionHeading>
+          <SectionSubHeading>Informasi terbaru dari Dinas komunikasi, informatika dan persandian kota Ambon</SectionSubHeading>
+          <SectionFlex>
+            <SectionContent>
+              <SectionTitle>Kegiatan</SectionTitle>
+              <SectionGrid>
+                { props.posts?.data?.length == 0 ?
+                Array(4).fill(1).map(i =>
 
-      <Divider
-        title="Informasi kegiatan lainnya"
-        subtitle="Kumpulan informasi kegiatan terkini"
-      />
+                  <div key={i}>
+                    <Skeleton style={{ height: 300 }}/>
+                    <Skeleton style={{ width: 320, marginTop: 10 }}/>
+                  </div>
 
-      <Container>
-        {
-          [...Array(3)].map(i =>
-            <Post key={i}/>
-          )
-        }
-      </Container>
+                ) : props.posts?.data?.map(post => <PostCard key={post.id} data={post} /> )
+              }
+              </SectionGrid>
+            </SectionContent>
+            <SectionContent>
+              <SectionTitle>Pengumuman</SectionTitle>
+              <AnnouncementContent>
+                {props.announcements?.data?.map(data =>
+                  <AnnouncementItem key={data.id}>
+                    <AnnouncementLink passHref href="halo">
+                      <>
+                      <AnnouncementTitle>{data.title}</AnnouncementTitle>
+                      <AnnouncementCreatedAtInfo><FontAwesomeIcon icon={faClock} />{data.created_at}</AnnouncementCreatedAtInfo>
+                      </>
+                    </AnnouncementLink>
+                  </AnnouncementItem>
+                )}
+              </AnnouncementContent>
+            </SectionContent>
+          </SectionFlex>
+        </Container>
+      </Section>
+
 
       <Footer>
         <Container>

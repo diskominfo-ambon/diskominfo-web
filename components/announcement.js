@@ -5,8 +5,8 @@ import { faCircleInfo, faClock, faUserCheck } from '@fortawesome/free-solid-svg-
 
 
 const Layout = styled.div`
-  padding: 2rem;
-  border: 1px solid #ddd;
+  padding: 1.3rem 0;
+  border-bottom: 1px dashed #ddd;
   margin-bottom: .9rem;
   border-radius: 5px;
 `;
@@ -15,15 +15,13 @@ const Heading = styled.h3`
   line-height: 26px;
   margin: 0;
   margin-bottom: .8rem;
-  font-size: 1.3rem;
+  font-size: 1.2rem;
 `;
 
 const Caption = styled.span`
-  margin-right: .4rem;
-  border: 1px solid #ddd;
+  margin-right: .3rem;
   display: inline-block;
   padding: .2rem .4rem;
-  border-radius: 3px;
   font-size: .8rem;
   font-weight: 400;
   font-family: 'Plus Jakarta Sans', sans-serif;
@@ -65,29 +63,21 @@ const AttachmentTextNotice = styled(Caption)`
 `;
 
 
-export default function Announcement() {
+export default function Announcement(props) {
   return (
     <Layout>
       <Heading>
-        Halo ini judulku
+        {props.data.title}
       </Heading>
       <>
         <Caption>
-          <FontAwesomeIcon icon={faUserCheck} />
-          Admin
-        </Caption>
-        <Caption>
           <FontAwesomeIcon icon={faClock} />
-          12 Januari 2000
+          {props.data.created_at}
         </Caption>
       </>
       <Description>
-        Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industrys standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.
+        {props.data.desc_short}
       </Description>
-      <AttachmentTextNotice>
-        <FontAwesomeIcon icon={faCircleInfo} />
-        Memilki dokumen
-      </AttachmentTextNotice>
     </Layout>
   );
 }

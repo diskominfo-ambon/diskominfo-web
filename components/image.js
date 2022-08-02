@@ -31,9 +31,7 @@ export default function Image(props) {
 
 
   return <ImageRounded
-    {
-      ...props
-    }
+    {...props}
     layout="responsive"
     placeholder="blur"
     loading="lazy"

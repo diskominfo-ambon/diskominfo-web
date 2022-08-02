@@ -9,8 +9,9 @@ import 'swiper/css/effect-fade';
 import 'swiper/css/pagination';
 import 'swiper/css/navigation';
 
+import useFetch from '@/utils/fetch';
 
-import Image from '@/components/image';
+import Image from './image';
 import Container from './container';
 
 
@@ -31,6 +32,9 @@ const ContentPlaceholder = styled.div`
 `;
 
 export default function NewsInfographic() {
+
+  const [loading, resp] = useFetch({ path: "/infographics" })
+
   return (
     <Container>
       <Heading>Infografis Dinas komunikasi, informatika dan persandian kota Ambon</Heading>
@@ -85,11 +89,27 @@ export default function NewsInfographic() {
           }
         `}
         </style>
-          {Array(10).fill(1).map(i =>
-            <SwiperSlide key={i}><ContentPlaceholder/></SwiperSlide>
-          )}
+
+          {
+            loading
+              ? <SwiperPlaceholder/>
+              : (
+                resp?.data?.map(data =>
+                  <SwiperSlide key={data.id}>
+                    <div style={{
+                      height: 340,
+                      width: 300
+                     }}>
+                      <Image src={data.picture_url} alt={data.title} height={340} width={300} />
+                    </div>
+                  </SwiperSlide>
+                )
+              )
+          }
         </Swiper>
       </Content>
     </Container>
   );
 }
+
+const SwiperPlaceholder = () => <>{Array(10).fill(1).map(i => <SwiperSlide key={i}><ContentPlaceholder/></SwiperSlide> )}</>;

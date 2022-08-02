@@ -22,8 +22,8 @@ const Title = styled.h2`
   margin: 0;
   margin-bottom: 1rem;
   line-height: 26px;
-  color: var(--primary);
   font-family: 'Plus Jakarta Sans', sans-serif;
+  font-size: 1.3rem;
 `;
 const ImageContent = styled.div`
   position: relative;
@@ -47,28 +47,25 @@ const Content = styled.div`
 const Description = styled.p`
   font-size: .9rem;
   font-family: 'Plus Jakarta Sans', sans-serif;
-  font-weight: 500;
+  font-weight: 400;
   margin: 0;
   margin-top: .8rem;
   line-height: 27px;
 `;
 const Caption = styled.span`
   margin-right: .4rem;
-  border: 1px solid #ddd;
   display: inline-block;
-  padding: .2rem .4rem;
-  border-radius: 3px;
   font-size: .8rem;
   font-weight: 400;
   font-family: 'Plus Jakarta Sans', sans-serif;
-  color: royalblue;
+  color: gray;
 
 
   > svg  {
     margin-right: .3rem;
     display: inline-block;
     > path {
-      color: royalblue;
+      color: gray;
     }
   }
 `;
@@ -80,7 +77,7 @@ const TagLabel = styled(Caption)`
 
 
 
-export default function Post() {
+export default function Post(props) {
   return (
     <FlexRow>
       <ImageContent>
@@ -92,19 +89,15 @@ export default function Post() {
         />
       </ImageContent>
       <Content>
-        <Title>Halo ini judul</Title>
+        <Title>{props.data.title}</Title>
         <>
           <Caption>
-            <FontAwesomeIcon icon={faUserCheck} />
-            Admin
-          </Caption>
-          <Caption>
             <FontAwesomeIcon icon={faClock} />
-            12 Januari 2000
+            {props.data.created_at}
           </Caption>
         </>
         <Description>
-          Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industrys standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.
+          {props.data.desc_short}
         </Description>
 
         <Link href="/i">Baca selengkapnya</Link>

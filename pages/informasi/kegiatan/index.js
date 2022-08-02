@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+import axios from 'axios';
 import Container from '@/components/container';
 import Breadcrumb from '@/components/breadcrumb';
 import Post from '@/components/post';
@@ -8,12 +9,14 @@ const Title = styled.h2`
   font-family: 'Plus Jakarta Sans', sans-serif;
   margin: 0;
   padding: 0;
+  color: var(--primary);
 `;
 const Subtitle = styled.p`
   font-family: 'Plus Jakarta Sans', sans-serif;
   margin: 0;
   padding: 0;
   margin-top: .5rem;
+
 `;
 const Content = styled.div`
   margin: 5rem 0;
@@ -34,7 +37,22 @@ const PostItem = styled.li`
   }
 `;
 
-export default function Index() {
+
+export async function getServerSideProps() {
+
+  // Fetch data from external API
+
+  const resp = await axios.get("/posts");
+  const posts = resp.data;
+
+  return {
+    props: {
+      posts,
+    }, // will be passed to the page component as props
+  }
+}
+
+export default function Index(props) {
   return (
     <Container>
       <Breadcrumb
@@ -45,17 +63,15 @@ export default function Index() {
         ]}
       />
       <Content>
-        <center>
-          <Title>Informasi kegiatan</Title>
-          <Subtitle>
-            Semua informasi kegiatan Dinas komunikasi informatika dan persandian kota Ambon
-          </Subtitle>
-        </center>
+        <Title>Informasi kegiatan</Title>
+        <Subtitle>
+          Semua informasi kegiatan Dinas komunikasi informatika dan persandian kota Ambon
+        </Subtitle>
 
         <Posts>
-          {[...Array(5)].map(i =>
-            <PostItem key={i}>
-              <Post />
+          {props.posts?.data?.map(post =>
+            <PostItem key={post.id}>
+              <Post data={post} />
             </PostItem>
           )}
         </Posts>

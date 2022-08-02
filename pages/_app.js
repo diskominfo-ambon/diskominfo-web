@@ -1,9 +1,11 @@
 import Head from 'next/head';
+import axios from 'axios';
 import { createGlobalStyle, ThemeProvider } from 'styled-components';
 import Navbar from '@/components/navbar';
 import Footer from '@/components/footer';
 import "@fortawesome/fontawesome-svg-core/styles.css";
 
+axios.defaults.baseURL = process.env.NEXT_PUBLIC_API_URL;
 
 const GlobalStyle = createGlobalStyle`
   :root {
