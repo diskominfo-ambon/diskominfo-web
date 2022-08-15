@@ -146,7 +146,7 @@ export default function Navbar() {
                 menus={[
                   { to: '/mengenal-kami/tentang', text: 'Tentang'},
                   { to: '/mengenal-kami/tugas', text: 'Tugas dan fungsi'},
-                  { to: '/mengenal-kami/command-center', text: 'Layanan Command Center'},
+                 
                 ]}
               />
             </NavbarItem>
@@ -168,8 +168,11 @@ export default function Navbar() {
                 menus={[
                   { blank: true, to: 'http://www.lapor.go.id', text: 'E-Lapor - Layanan lapor pengaduan masyarakat'},
                   { blank: true, to: 'https://ambonaccess.id', text: 'Ambon Access'},
-                  { blank: true, to: 'http://dpmptsp.ambon.go.id', text: 'DPMPTSP - Dinas Penanaman Modal dan Pelayanan Terpadu Satu Pintu'},
+                  { blank: true, to: '/static/img/SOP-PENGADUAN-melalui-LaporSPAN-dan-MEdia-Lain-KOTA-AMBON (2)_page-0001.jpg', text: 'SOP Pengaduan Melalui LAPOR-SPAN dan Media Lain'},
+                  { blank: true, to: 'https://ambon.go.id/wp-content/uploads/2020/12/SOP-PENGADUAN-SMS.jpg', text: 'SOP SMS BROADCAST'},
+                  { blank: true, to: '/static/img/SOP-PENGADUAN-LAYANAN-INTERNET-DAN-APLIKASI.jpg', text: 'SOP LAYANAN INTERNET DAN APLIKASI'},
                   { blank: true, to: '#', text: 'SIMAK - Sistem Informasi Manajemen Administrasi Kependudukan'},
+                  { to: '/mengenal-kami/command-center', text: 'Layanan Command Center'},
                 ]}
               />
             </NavbarItem>

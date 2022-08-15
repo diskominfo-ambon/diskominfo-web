@@ -82,7 +82,7 @@ export default function Post(props) {
     <FlexRow>
       <ImageContent>
         <Image
-          src="https://images.unsplash.com/photo-1644982652061-df82282e178d?ixlib=rb-1.2.1&ixid=MnwxMjA3fDF8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1740&q=80"
+          src={props.data.picture_url}
           alt="cover"
           height="200"
           width="300"

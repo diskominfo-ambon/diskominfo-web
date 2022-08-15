@@ -388,7 +388,7 @@ export default function Home(props) {
         </Container>
         <FlexCenter>
           <Container>
-              <Headline>Make Ambon Healthy, Safe, and Productive</Headline>
+              <Headline>WEBSITE RESMI DINAS KOMINFOSANDI KOTA AMBON</Headline>
               <SubHeadline><BlockTagHealdine>#kenaldulu</BlockTagHealdine> bersama Dinas Komunikasi, Informatika dan Persandian kota Ambon wujudkan Teknologi untuk semua.</SubHeadline>
               <center>
                 <HeadlineLink passHref href="/mengenal-kami/tentang">
@@ -449,7 +449,7 @@ export default function Home(props) {
       <br/>
       <br/>
 
-      <NewsInfographic/>
+      {/* <NewsInfographic/> */}
 
 
       {/* Kegiatan & Pengumuman terbaru */}

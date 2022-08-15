@@ -23,6 +23,14 @@ const Heading = styled.h2`
   font-size: 1.2rem;
 `;
 
+const Image = styled.img`
+  width: 100%;
+  border-radius: 5px;
+  margin-bottom: .8rem;
+  display: block;
+`;
+
+
 const Blackqoute = styled(Paragraph)`
   font-style: italic;
   border-left: 6px solid var(--light);
@@ -54,7 +62,21 @@ export default function CommandCenter() {
           Command Center merupakan pusat visualisasi dan integrasi data Kota Ambon yang dilengkapi dengan berbagai infrastruktur untuk kegiatan monitoring, koordinasi & pengambilan keputusan. Command Center bertempat di kawasan Jl. Sultan Hairun No. 1 Gd. C Lt. 4 kantor Balai kota Ambon Gedung A.
         </Paragraph>
 
+        <Heading>
+         SOP Kunjungan Command Center
+        </Heading>
+        <Image src="/static/img/SOP_COMMAND CENTER_PEMKOT_AMBON-2.jpg"/>
 
+        <Heading>
+         SOP Permintaan Data pada Command Center
+        </Heading>
+        <Iframe
+          src='/static/SOP_PERMINTAAN_DATA_COMMAND CENTER_PEMKOT_AMBON-.pdf'
+          frameBorder='0'
+          allow='autoplay; encrypted-media; accelerometer; gyroscope'
+          allowFullScreen
+          title='Command center introduction'
+        />
 
       </Content>
     </Layout>

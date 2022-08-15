@@ -41,6 +41,8 @@ export default function About() {
       </List>
       <Heading>Motto</Heading>
       <Paragraph>Aktual dan terpercaya dalam pelayanan informasi</Paragraph>
+      <Heading>11 Kebijakan Prioritas</Heading>
+      <Image src="https://ambon.go.id/wp-content/uploads/2022/07/11-Kebijakan-Prioritas.jpeg"/>
 
       <Heading>Struktur Organisasi</Heading>
       <Image src="https://ambon.go.id/wp-content/uploads/2022/04/3.-Kominfo.png"/>
