@@ -47,6 +47,10 @@ export default function About() {
       <Heading>Struktur Organisasi</Heading>
       <Image src="https://ambon.go.id/wp-content/uploads/2022/04/3.-Kominfo.png"/>
 
+      <Heading>Penilaian</Heading>
+      <iframe src="https://docs.google.com/presentation/d/e/2PACX-1vSpBq_62r6jQ5LXABfC1ymPBW6Ex3s_v7A82KsHcqxCxU3vvwAqYRc_8yMXc84Znyhy2N9nzjwPxMPy/embed?start=false&loop=false&delayms=3000" frameborder="0" width="960" height="569" allowfullscreen="true" mozallowfullscreen="true" webkitallowfullscreen="true"></iframe>
     </Layout>
   );
 }
+
+
