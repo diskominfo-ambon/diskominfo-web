@@ -150,6 +150,19 @@ export default function Navbar() {
                 ]}
               />
             </NavbarItem>
+            <NavbarItem
+              active={/perencanaan/.test(router.pathname)}
+            >
+              <LinkDropdown
+                text="Perencanaan"
+                menus={[
+                  { to: '/perencanaani/rencana-strategi', text: 'Rencana Strategis'},
+                  { to: '/perencanaan/rencana-kerja', text: 'Rencana Kerja'},
+                  { to: '/perencanaan/lakip', text: 'LAKIP'},
+          
+                ]}
+              />
+            </NavbarItem>
             <NavbarItem  active={router.pathname === '/pengumuman'}>
               <Link href="/pengumuman" passHref>Pengumuman</Link>
             </NavbarItem>
