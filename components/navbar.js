@@ -156,10 +156,12 @@ export default function Navbar() {
               <LinkDropdown
                 text="Perencanaan"
                 menus={[
-                  { to: '/perencanaani/rencana-strategi', text: 'Rencana Strategis'},
+                  { to: '/static/RENSTRA-2017-2023.pdf', text: 'Rencana Strategis'},
                   { to: '/perencanaan/rencana-kerja', text: 'Rencana Kerja'},
-                  { to: '/perencanaan/lakip', text: 'LAKIP'},
-          
+                  { to: '/static/LAKIP DISKOMINFO 2021.pdf', text: 'Laporan Kinerja Akuntabilitas Pemerintah'},
+                  { to: '/static/', text: 'Laporan Pertanggungjawaban Pemerintah Daerah'},
+                  // { to: '/perencanaan/lakip', text: 'LAKIP'},
+                  { to: '/perencanaan/lkpj', text: 'LKPJ'},
                 ]}
               />
             </NavbarItem>
