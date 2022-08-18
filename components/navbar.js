@@ -146,6 +146,7 @@ export default function Navbar() {
                 menus={[
                   { to: '/mengenal-kami/tentang', text: 'Tentang'},
                   { to: '/mengenal-kami/tugas', text: 'Tugas dan fungsi'},
+                  { to: '/mengenal-kami/pegawai', text: 'Pegawai'},
                  
                 ]}
               />
@@ -157,7 +158,7 @@ export default function Navbar() {
                 text="Perencanaan"
                 menus={[
                   { to: '/static/RENSTRA-2017-2023.pdf', text: 'Rencana Strategis'},
-                  { to: '/perencanaan/rencana-kerja', text: 'Rencana Kerja'},
+                  { to: '/perencanaan/RENJA KOMINFO 2022.pdf', text: 'Rencana Kerja'},
                   { to: '/static/LAKIP DISKOMINFO 2021.pdf', text: 'Laporan Kinerja Akuntabilitas Pemerintah'},
                   { to: '/static/', text: 'Laporan Pertanggungjawaban Pemerintah Daerah'},
                   // { to: '/perencanaan/lakip', text: 'LAKIP'},
