@@ -158,7 +158,7 @@ export default function Navbar() {
                 text="Perencanaan"
                 menus={[
                   { to: '/static/RENSTRA-2017-2023.pdf', text: 'Rencana Strategis'},
-                  { to: '/perencanaan/RENJA KOMINFO 2022.pdf', text: 'Rencana Kerja'},
+                  { to: '/static/RENJA KOMINFO 2022.pdf', text: 'Rencana Kerja'},
                   { to: '/static/LAKIP DISKOMINFO 2021.pdf', text: 'Laporan Kinerja Akuntabilitas Pemerintah'},
                   { to: '/static/', text: 'Laporan Pertanggungjawaban Pemerintah Daerah'},
                   // { to: '/perencanaan/lakip', text: 'LAKIP'},
