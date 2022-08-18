@@ -292,6 +292,7 @@ const AnnouncementCreatedAtInfo = styled.p`
 `;
 
 
+
 const polices = [
   'Konsolidasi Internal Birokrasi',
   'Penataan Manajemen Pengelolaan Keuangan dan Aset Daerah',
@@ -388,16 +389,7 @@ export default function Home(props) {
         </Container>
         <FlexCenter>
           <Container>
-              <Headline>WEBSITE RESMI DINAS KOMINFOSANDI KOTA AMBON</Headline>
-              <SubHeadline><BlockTagHealdine>#kenaldulu</BlockTagHealdine> bersama Dinas Komunikasi, Informatika dan Persandian kota Ambon wujudkan Teknologi untuk semua.</SubHeadline>
-              <center>
-                <HeadlineLink passHref href="/mengenal-kami/tentang">
-                  Mulai kenalan dulu
-                  <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
-                    <path strokeLinecap="round" strokeLinejoin="round" d="M13 5l7 7-7 7M5 5l7 7-7 7" />
-                  </svg>
-                </HeadlineLink>
-              </center>
+                <img src="/static/banner/banner-kemerdekaan.jpeg" alt=""/>
           </Container>
           </FlexCenter>
       </HeadlineWelcome>
