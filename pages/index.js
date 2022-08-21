@@ -292,7 +292,6 @@ const AnnouncementCreatedAtInfo = styled.p`
 `;
 
 
-
 const polices = [
   'Konsolidasi Internal Birokrasi',
   'Penataan Manajemen Pengelolaan Keuangan dan Aset Daerah',
@@ -389,7 +388,17 @@ export default function Home(props) {
         </Container>
         <FlexCenter>
           <Container>
-                <img src="/static/banner/banner-kemerdekaan.jpeg" alt=""/>
+              <img src="/static/banner/banner-kemerdekaan.jpeg" alt=""/>
+          </Container>
+          <Container>
+             <center>
+                <HeadlineLink target="__blank" passHref href="https://docs.google.com/presentation/d/e/2PACX-1vRUtqzKokdgHmXV1WUKDkjg_AwOWtFCi5EFvX0dEPpZrCSv3eHbABf0hnloa7oCZFfvmewJ1Z69cfie/pub?start=false&loop=false&delayms=3000">
+                  Lihat Ombudsman
+                  <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
+                    <path strokeLinecap="round" strokeLinejoin="round" d="M13 5l7 7-7 7M5 5l7 7-7 7" />
+                  </svg>
+                </HeadlineLink>
+              </center>
           </Container>
           </FlexCenter>
       </HeadlineWelcome>

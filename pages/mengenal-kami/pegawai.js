@@ -61,7 +61,7 @@ export default function Pegawai(props) {
        {props.resp?.data?.map( employee => 
 
         <Content key={employee.id}>
-          <img src="/static/img/avatar.jpg" height="100" width="100" />
+          <img src={employee.profile} height="100" width="100" />
           <Heading>{employee.name}</Heading>
           <Paragraph>{employee.employee_role}</Paragraph>
         </Content>
